@@ -1,3 +1,5 @@
+DEPLOYMENT LINK: https://portfolio-nu-ten-b8bg7s8ws7.vercel.app/
+
 # Aryan Anand Fargose — Cinematic Interactive Portfolio
 
 A premium, interactive personal portfolio website engineered with smooth frame-scrubbed canvas animation, cyber-minimalist dark aesthetics, and interactive project showcases.
