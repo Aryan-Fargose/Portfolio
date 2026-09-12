@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aryan Fargose | IT Engineering Student & Developer Portfolio</title>
+  <meta name="description" content="Cinematic, interactive personal portfolio of Aryan Fargose — IT Engineering Student at DJSCE Mumbai, Builder, and Technology Enthusiast.">
+  <meta name="keywords" content="Aryan Fargose, DJSCE, IT Engineering, CampusHub, GitSearch, Software Developer, Mumbai">
+  
+  <!-- OpenGraph / Social Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Aryan Fargose | Interactive Developer Portfolio">
+  <meta property="og:description" content="Experience a scroll-controlled 300-frame cinematic hardware exploration and portfolio showcase.">
+  <meta property="og:url" content="https://github.com/Aryan-Fargose">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/src/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2338bdf8'><path d='M12 2L2 19h20L12 2zm0 4.5l6.5 11h-13L12 6.5z'/></svg>">
+</head>
+<body>
+
+  <!-- Loading & Hydration Screen -->
+  <div class="loading-screen" id="loading-screen" role="progressbar" aria-label="Loading Cinematic Experience">
+    <div class="loading-box">
+      <div class="loading-logo-ring"></div>
+      <h1 class="loading-title">ARYAN FARGOSE</h1>
+      <p class="loading-status" id="loading-status">INITIALIZING SYSTEM // 0%</p>
+      <div class="loading-bar-track">
+        <div class="loading-bar-fill" id="loading-bar-fill"></div>
+      </div>
+      <p class="loading-percent" id="loading-percent">PREPARING 300 SEQUENTIAL FRAMES</p>
+      <div class="loading-enter-btn" id="loading-enter-btn">
+        <button class="btn-primary" id="btn-start-exploring">SCROLL TO ENGAGE SYSTEM ↓</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Minimal Top Navigation -->
+  <nav class="floating-nav" id="floating-nav" aria-label="Main Navigation">
+    <a href="#intro" class="brand-mark" data-target="intro" aria-label="Aryan Fargose">
+      <span>AF</span>
+      <em>/ portfolio 2026</em>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#intro" class="nav-link active" data-target="intro">Intro</a></li>
+      <li><a href="#about" class="nav-link" data-target="about">About</a></li>
+      <li><a href="#education" class="nav-link" data-target="education">Education</a></li>
+      <li><a href="#projects" class="nav-link" data-target="projects">Work</a></li>
+      <li><a href="#skills" class="nav-link" data-target="skills">Skills</a></li>
+      <li><a href="#interests" class="nav-link" data-target="interests">Life</a></li>
+      <li><a href="#aspirations" class="nav-link" data-target="aspirations">Next</a></li>
+      <li><a href="#contact" class="nav-link" data-target="contact">Contact</a></li>
+    </ul>
+    <a href="https://www.linkedin.com/in/aryan-fargose-b99330387" target="_blank" rel="noopener noreferrer" class="nav-availability" title="Connect on LinkedIn">
+      <span class="status-dot"></span>
+      <span>COLLABORATE</span>
+    </a>
+  </nav>
+
+  <!-- Vertical Chapter Progress Rail (Inspired by Scrollfolio) -->
+  <aside class="chapter-rail" id="chapter-rail" aria-label="Chapter Progression">
+    <div class="rail-line">
+      <span class="rail-line-fill" id="rail-line-fill"></span>
+    </div>
+    <div class="rail-labels">
+      <a href="#intro" class="rail-label-item active" data-target="intro">01 <span>Intro</span></a>
+      <a href="#about" class="rail-label-item" data-target="about">02 <span>About</span></a>
+      <a href="#education" class="rail-label-item" data-target="education">03 <span>Education</span></a>
+      <a href="#projects" class="rail-label-item" data-target="projects">04 <span>Work</span></a>
+      <a href="#skills" class="rail-label-item" data-target="skills">05 <span>Skills</span></a>
+      <a href="#interests" class="rail-label-item" data-target="interests">06 <span>Life</span></a>
+      <a href="#aspirations" class="rail-label-item" data-target="aspirations">07 <span>Next</span></a>
+      <a href="#contact" class="rail-label-item" data-target="contact">08 <span>Contact</span></a>
+    </div>
+  </aside>
+
+  <!-- Corner Chapter Information System (01 / 08 INTRO) -->
+  <aside class="corner-indicator" id="corner-indicator" aria-live="polite">
+    <div class="corner-meta">
+      <span class="corner-number" id="corner-number">01 / 08</span>
+      <span class="corner-badge">CHAPTER</span>
+    </div>
+    <span class="corner-title" id="corner-title">INTRO</span>
+  </aside>
+
+  <!-- Top-Right Live Telemetry -->
+  <div class="corner-telemetry">
+    <div class="telemetry-tag">
+      <span class="telemetry-dot"></span>
+      <span>DJSCE // B.TECH IT (2025-2029)</span>
+    </div>
+    <a href="https://github.com/Aryan-Fargose" target="_blank" rel="noopener noreferrer" class="telemetry-social-link" title="GitHub Profile" aria-label="GitHub Profile">
+      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/aryan-fargose-b99330387" target="_blank" rel="noopener noreferrer" class="telemetry-social-link" title="LinkedIn Profile" aria-label="LinkedIn Profile">
+      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+    </a>
+  </div>
+
+  <!-- Fixed High-Performance Animation Canvas -->
+  <div class="canvas-viewport" aria-hidden="true">
+    <canvas id="animation-canvas"></canvas>
+  </div>
+
+  <!-- Ambient Dark Vignette Filter -->
+  <div class="ambient-overlay" aria-hidden="true"></div>
+
+  <!-- IDEA CORE Glowing Badge -->
+  <div class="idea-core-highlight" id="idea-core-highlight" aria-hidden="true">
+    <span class="core-spark"></span>
+    <span class="core-text">IDEA CORE ACTIVE</span>
+    <span class="core-flow">IDEA → CODE → DESIGN → BUILD → SHIP</span>
+  </div>
+
+  <!-- Chapter Overlays Layer -->
+  <main class="chapter-viewport">
+
+    <!-- 01: INTRO / HERO -->
+    <section class="chapter-panel active" id="panel-intro" aria-label="Hero Section">
+      <div class="hero-content">
+        <!-- Aryan Fargose Verified Portrait Badge -->
+        <div class="hero-portrait-wrap">
+          <div class="hero-portrait-frame">
+            <img src="/aryan-fargose.jpg" alt="Aryan Fargose" class="hero-portrait-img" loading="eager" fetchpriority="high" />
+          </div>
+          <div class="hero-portrait-badge">
+            <span class="status-dot"></span>
+            <span>ARYAN FARGOSE // DJSCE IT</span>
+          </div>
+        </div>
+
+        <p class="kicker">
+          <span class="kicker-rule"></span>
+          <span>INDEPENDENT DEVELOPER // SYSTEMS & INTERFACES</span>
+        </p>
+
+        <h1 class="hero-title">
+          <span class="hero-name-big">ARYAN FARGOSE</span>
+          <span class="hero-title-sub">Building digital <i>systems</i> with intent.</span>
+        </h1>
+
+        <p class="hero-subtitle">B.Tech Information Technology (2025 — 2029) · Dwarkadas J. Sanghvi College of Engineering</p>
+        <div class="hero-pills">
+          <span class="hero-pill">REACT & VITE</span>
+          <span class="hero-pill">SYSTEMS & ARCHITECTURE</span>
+          <span class="hero-pill">JAVA · PYTHON · C · TS</span>
+          <span class="hero-pill">CREATIVE CODING</span>
+        </div>
+
+        <div class="hero-scroll-prompt" id="hero-scroll-prompt">
+          <span>SCROLL TO EXPLORE</span>
+          <svg class="scroll-arrow-anim" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02: ABOUT ME -->
+    <section class="chapter-panel" id="panel-about" aria-label="About Section">
+      <div class="panel-grid-side">
+        <div class="glass-card panel-content-left">
+          <p class="kicker">
+            <span class="kicker-rule"></span>
+            <span>02 // ABOUT</span>
+          </p>
+          <h2 class="section-heading">Good work lives<br><i>between</i> logic and feeling.</h2>
+          <p class="section-description">
+            I am an Information Technology engineering student (2025 — 2029) at <strong>Dwarkadas J. Sanghvi College of Engineering (DJSCE)</strong>, Mumbai.
+          </p>
+          <p class="section-description">
+            With a solid engineering foundation in C, Java, Python, JavaScript, and TypeScript, I build thoughtful interfaces and useful software. Outside code, my rhythm is anchored in cricket, football, endurance running, music, and dissecting cinematic framing in film.
+          </p>
+          <div class="about-meta-grid">
+            <div class="about-meta-item">
+              <span class="meta-label">INSTITUTION</span>
+              <span class="meta-val">DJSCE, Mumbai</span>
+            </div>
+            <div class="about-meta-item">
+              <span class="meta-label">STATUS</span>
+              <span class="meta-val">B.Tech IT (2025 — 2029)</span>
+            </div>
+            <div class="about-meta-item">
+              <span class="meta-label">CORE FOCUS</span>
+              <span class="meta-val">Full-Stack & Systems</span>
+            </div>
+            <div class="about-meta-item">
+              <span class="meta-label">AVAILABILITY</span>
+              <span class="meta-val">Open to Collaborations</span>
+            </div>
+          </div>
+        </div>
+        <div><!-- Left side has card; center canvas shows rotating laptop --></div>
+      </div>
+    </section>
+
+    <!-- 03: EDUCATION -->
+    <section class="chapter-panel" id="panel-education" aria-label="Education Section">
+      <div class="panel-grid-side">
+        <div><!-- Space for 3D rotated laptop --></div>
+        <div class="glass-card panel-content-right">
+          <p class="kicker">
+            <span class="kicker-rule"></span>
+            <span>03 // EDUCATION</span>
+          </p>
+          <h2 class="section-heading">Academic <i>foundations</i> & systems study.</h2>
+          <div class="edu-timeline">
+            <div class="edu-badge">2025 — 2029 (B.TECH IT)</div>
+            <h3 style="font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 4px; font-weight: 700;">Bachelor of Technology in Information Technology</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 10px;">Dwarkadas J. Sanghvi College of Engineering (DJSCE), Mumbai</p>
+            <div class="course-tags" style="margin-bottom: 14px;">
+              <span class="course-tag" style="background: rgba(216, 243, 107, 0.15); color: var(--accent-lime); border-color: rgba(216, 243, 107, 0.3); font-weight: 600;">CGPA: 8.79</span>
+              <span class="course-tag" style="background: rgba(56, 189, 248, 0.15); color: var(--accent-cyan); border-color: rgba(56, 189, 248, 0.3); font-weight: 600;">MHT-CET: 98.4901 Percentile</span>
+            </div>
+            <p class="section-description" style="margin-bottom: 8px;">
+              Prior Milestones:
+            </p>
+            <div style="font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-mono); margin-bottom: 14px; display: flex; flex-direction: column; gap: 4px;">
+              <span>• HSC (PCM): St. Rocks Jr. College, Mumbai (2023–2025)</span>
+              <span>• CBSE Class X: Notre Dame School, Mumbai (2023)</span>
+            </div>
+            <span class="section-label" style="font-size: 0.68rem; margin-bottom: 6px;">KEY DISCIPLINES</span>
+            <div class="course-tags" style="margin-bottom: 16px;">
+              <span class="course-tag">Data Structures & Algorithms</span>
+              <span class="course-tag">Object-Oriented Programming</span>
+              <span class="course-tag">Database Management (DBMS)</span>
+              <span class="course-tag">Computer Networks</span>
+              <span class="course-tag">Operating Systems</span>
+              <span class="course-tag">Web Technologies</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04: PROJECTS -->
+    <section class="chapter-panel" id="panel-projects" aria-label="Projects Section">
+      <div style="text-align: center; margin-bottom: 24px;">
+        <p class="kicker" style="justify-content: center;">
+          <span class="kicker-rule"></span>
+          <span>04 // SELECTED WORK</span>
+        </p>
+        <h2 class="section-heading">A few things<br><i>in motion.</i></h2>
+      </div>
+      <div class="projects-deck">
+        <!-- Project 1: CampusHub (Flagship) -->
+        <article class="project-card featured">
+          <div>
+            <div class="project-visual project-visual-1">
+              <span class="project-visual-num">01 / PLATFORM</span>
+              <div class="visual-orbit"></div>
+            </div>
+            <div class="project-header">
+              <span class="project-type">COMMUNITY PLATFORM & CAMPUS HUB</span>
+              <span class="project-status">ACTIVE BUILD</span>
+            </div>
+            <h3 class="project-title">CAMPUSHUB</h3>
+            <p class="project-desc">
+              An all-in-one student platform engineered specifically around college life at DJSCE. Unifies daily cafeteria menus, 75% attendance projection calculators, anonymous student community wall, semester study resources, GPA calculators, and quick mini-games.
+            </p>
+            <div class="tag-row">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>Vite</span>
+              <span>REST APIs</span>
+              <span>Systems</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://campus-hub-delta-green.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary" title="Launch CampusHub Live Demo">
+              <span>Live Demo</span>
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </a>
+            <a href="https://github.com/Aryan-Fargose/CampusHub" target="_blank" rel="noopener noreferrer" class="btn-secondary" title="View CampusHub on GitHub">
+              <span>Source Code</span>
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2: GitSearch -->
+        <article class="project-card">
+          <div>
+            <div class="project-visual project-visual-2">
+              <span class="project-visual-num">02 / TOOLING</span>
+              <div class="visual-orbit visual-orbit-2"></div>
+            </div>
+            <div class="project-header">
+              <span class="project-type">DEVELOPER TOOLING & GITHUB SEARCH</span>
+              <span class="project-status completed">PRODUCTION</span>
+            </div>
+            <h3 class="project-title">GITSEARCH</h3>
+            <p class="project-desc">
+              A high-velocity React + Vite web application built for instant GitHub profile telemetry, repository inspection, language distribution telemetry, and starred work exploration.
+            </p>
+            <div class="tag-row">
+              <span>React</span>
+              <span>Vite</span>
+              <span>JavaScript</span>
+              <span>GitHub API</span>
+              <span>UI/UX</span>
+            </div>
+          </div>
+          <div class="project-actions">
+            <a href="https://git-search-rouge.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary" title="Launch GitSearch Live Demo">
+              <span>Live Demo</span>
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </a>
+            <a href="https://github.com/Aryan-Fargose/GitSearch" target="_blank" rel="noopener noreferrer" class="btn-secondary" title="View GitSearch on GitHub">
+              <span>Source Code</span>
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 05: SKILLS & EXPLODED HARDWARE HUD -->
+    <section class="chapter-panel" id="panel-skills" aria-label="Skills and Hardware Section">
+      <div class="skills-layout">
+        <div>
+          <p class="kicker">
+            <span class="kicker-rule"></span>
+            <span>05 // CAPABILITIES</span>
+          </p>
+          <h2 class="section-heading">From blank canvas<br>to <i>shipped.</i></h2>
+          <p class="section-description" style="margin-bottom: 20px;">
+            A verified inventory of programming languages, architectures, web technologies, and performance optimization tools.
+          </p>
+          <div class="skills-matrix">
+            <div class="skill-cat-card">
+              <span class="cat-title">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                PROGRAMMING
+              </span>
+              <div class="cat-skills">
+                <span class="cat-skill-tag">C</span>
+                <span class="cat-skill-tag">Java</span>
+                <span class="cat-skill-tag">Python</span>
+                <span class="cat-skill-tag">JavaScript (ES6+)</span>
+                <span class="cat-skill-tag">TypeScript</span>
+              </div>
+            </div>
+            <div class="skill-cat-card">
+              <span class="cat-title">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"></path></svg>
+                WEB DEVELOPMENT
+              </span>
+              <div class="cat-skills">
+                <span class="cat-skill-tag">HTML5</span>
+                <span class="cat-skill-tag">Modern CSS</span>
+                <span class="cat-skill-tag">React</span>
+                <span class="cat-skill-tag">Vite</span>
+                <span class="cat-skill-tag">REST APIs</span>
+              </div>
+            </div>
+            <div class="skill-cat-card">
+              <span class="cat-title">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"></path></svg>
+                DEVELOPER TOOLS
+              </span>
+              <div class="cat-skills">
+                <span class="cat-skill-tag">Git</span>
+                <span class="cat-skill-tag">GitHub</span>
+                <span class="cat-skill-tag">VS Code</span>
+                <span class="cat-skill-tag">Node / npm</span>
+                <span class="cat-skill-tag">CLI</span>
+              </div>
+            </div>
+            <div class="skill-cat-card">
+              <span class="cat-title">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                GRAPHICS & MOTION
+              </span>
+              <div class="cat-skills">
+                <span class="cat-skill-tag">Canvas API</span>
+                <span class="cat-skill-tag">Frame Sequences</span>
+                <span class="cat-skill-tag">rAF Optimization</span>
+                <span class="cat-skill-tag">Anime.js</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Verified Certifications from Resume -->
+          <div style="margin-top: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(216, 243, 107, 0.25); border-radius: 12px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--accent-lime); background: rgba(216, 243, 107, 0.15); padding: 2px 6px; border-radius: 4px; font-weight: 700;">CERTIFIED</span>
+              <span style="font-size: 0.8rem; font-weight: 600; color: #fff;">Python Programming Fundamentals (Microsoft / Coursera · April 2026)</span>
+            </div>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-cyan);">CodeChef Beginner Div</span>
+          </div>
+        </div>
+
+        <!-- Hardware Metaphors HUD -->
+        <div class="hardware-hud" id="hardware-hud" aria-label="Component Metaphors">
+          <div class="hud-item">
+            <div class="hud-left">
+              <span class="hud-chip">CPU</span>
+              <span class="hud-metaphor">Problem Solving & Logic</span>
+            </div>
+            <span class="hud-metric">Algorithmic Rigor</span>
+          </div>
+          <div class="hud-item">
+            <div class="hud-left">
+              <span class="hud-chip">GPU</span>
+              <span class="hud-metaphor">Creativity & Visual Computing</span>
+            </div>
+            <span class="hud-metric">Pixel Precision</span>
+          </div>
+          <div class="hud-item">
+            <div class="hud-left">
+              <span class="hud-chip">RAM</span>
+              <span class="hud-metaphor">High-Bandwidth Multitasking</span>
+            </div>
+            <span class="hud-metric">Dynamic Flow</span>
+          </div>
+          <div class="hud-item">
+            <div class="hud-left">
+              <span class="hud-chip">SSD</span>
+              <span class="hud-metaphor">Projects & Knowledge</span>
+            </div>
+            <span class="hud-metric">Persistent Storage</span>
+          </div>
+          <div class="hud-item">
+            <div class="hud-left">
+              <span class="hud-chip">BOARD</span>
+              <span class="hud-metaphor">Interconnected Architecture</span>
+            </div>
+            <span class="hud-metric">System Synergy</span>
+          </div>
+          <div class="hud-item">
+            <div class="hud-left">
+              <span class="hud-chip">FANS</span>
+              <span class="hud-metaphor">Composed Under Pressure</span>
+            </div>
+            <span class="hud-metric">Thermal Balance</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06: INTERESTS, MUSIC & CINEMA -->
+    <section class="chapter-panel" id="panel-interests" aria-label="Interests and Personality Section">
+      <div class="panel-content-center">
+        <p class="kicker" style="justify-content: center;">
+          <span class="kicker-rule"></span>
+          <span>06 // OFF THE CLOCK</span>
+        </p>
+        <h2 class="section-heading">Off the <i>clock</i> & in rhythm.</h2>
+        <p class="section-description" style="max-width: 650px; margin: 0 auto 28px;">
+          The disciplines and creative habits that sharpen tactical reflexes, stamina, and visual intuition.
+        </p>
+
+        <div class="interests-grid">
+          <!-- Music Card -->
+          <div class="interest-card special-music">
+            <div class="life-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13M9 18a3 3 0 11-6 0 3 3 0 016 0zm12 0a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            </div>
+            <span class="interest-badge">ACOUSTICS & FLOW</span>
+            <h3 class="interest-title">MUSIC</h3>
+            <p class="interest-tagline">Deep Focus Soundtracks</p>
+            <p class="interest-desc">
+              Ambient soundscapes, atmospheric electronica, and rhythmic pulses that unlock sustained flow states during complex engineering sessions.
+            </p>
+            <div class="waveform-visualizer" aria-hidden="true">
+              <div class="waveform-bar"></div>
+              <div class="waveform-bar"></div>
+              <div class="waveform-bar"></div>
+              <div class="waveform-bar"></div>
+              <div class="waveform-bar"></div>
+              <div class="waveform-bar"></div>
+            </div>
+          </div>
+
+          <!-- Cinema Card -->
+          <div class="interest-card special-cinema">
+            <div class="life-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"></path></svg>
+            </div>
+            <span class="interest-badge">VISUAL DIRECTION</span>
+            <h3 class="interest-title">CINEMA</h3>
+            <p class="interest-tagline">Framing, Lighting & Pacing</p>
+            <p class="interest-desc">
+              Analyzing cinematographic lighting, rhythm, pacing, and visual composition — infusing film-grade craft into digital interfaces.
+            </p>
+            <div class="filmstrip-visualizer" aria-hidden="true">
+              <div class="filmstrip-frame"></div>
+              <div class="filmstrip-frame"></div>
+              <div class="filmstrip-frame"></div>
+              <div class="filmstrip-frame"></div>
+            </div>
+          </div>
+
+          <!-- Sports & Fitness Card -->
+          <div class="interest-card">
+            <div class="life-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            </div>
+            <span class="interest-badge">STRATEGY & ENDURANCE</span>
+            <h3 class="interest-title">SPORTS & RUNNING</h3>
+            <p class="interest-tagline">Cricket · Football · Fitness</p>
+            <p class="interest-desc">
+              Cricket teaches tactical patience and team harmony; football builds spatial pace; running instills the physical stamina needed for relentless engineering.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07: WHAT'S NEXT / ASPIRATIONS -->
+    <section class="chapter-panel" id="panel-aspirations" aria-label="Aspirations Section">
+      <div class="panel-content-center">
+        <p class="kicker" style="justify-content: center;">
+          <span class="kicker-rule"></span>
+          <span>07 // FUTURE HORIZONS</span>
+        </p>
+        <h2 class="section-heading">Constantly pushing <i>horizons.</i></h2>
+        <p class="section-description" style="max-width: 600px; margin: 0 auto;">
+          Continuously pushing personal benchmarks, mastering distributed software, and building tools that make a real difference.
+        </p>
+
+        <div class="aspirations-grid">
+          <div class="aspiration-card">
+            <h4>Engineering for Real Impact</h4>
+            <p>Expanding platforms like CampusHub to solve daily problems for thousands of students with zero friction.</p>
+          </div>
+          <div class="aspiration-card">
+            <h4>Merging Code with Cinematic Craft</h4>
+            <p>Proving that technical portfolios can feel as captivating, tactile, and immersive as award-winning cinema.</p>
+          </div>
+          <div class="aspiration-card">
+            <h4>Mastering Next-Gen Systems</h4>
+            <p>Diving deeper into AI developer tools, cloud architectures, and modern web performance optimization.</p>
+          </div>
+          <div class="aspiration-card">
+            <h4>Lifelong Craftsmanship</h4>
+            <p>Embracing curiosity, learning from every bug, and continually shipping polished software with pride.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08: CONTACT / CLOSING -->
+    <section class="chapter-panel" id="panel-contact" aria-label="Contact Section">
+      <div class="contact-container">
+        <p class="kicker" style="justify-content: center;">
+          <span class="kicker-rule"></span>
+          <span>08 // TRANSMISSION</span>
+        </p>
+        <h2 class="contact-heading">
+          <span>Have a good<br><i>idea?</i> Let's build.</span>
+        </h2>
+        <p class="contact-sub">
+          Have an exciting project, an internship opportunity, or want to discuss software engineering, sports, or cinema? I'd love to connect.
+        </p>
+
+        <div class="contact-channels">
+          <a href="/Aryan_Fargose_Resume.pdf" download="Aryan_Fargose_Resume.pdf" class="channel-card highlight-resume" title="Download Official Resume (PDF)">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            <span>Resume (PDF) ↓</span>
+          </a>
+          <button class="channel-card highlight-view-resume" id="btn-open-resume-modal" title="View Full Interactive Resume">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+            <span>Quick View Resume</span>
+          </button>
+          <a href="https://github.com/Aryan-Fargose" target="_blank" rel="noopener noreferrer" class="channel-card">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span>GitHub / Aryan-Fargose</span>
+          </a>
+          <a href="https://www.linkedin.com/in/aryan-fargose-b99330387" target="_blank" rel="noopener noreferrer" class="channel-card">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            <span>LinkedIn / aryan-fargose</span>
+          </a>
+          <a href="mailto:aryanfargose@gmail.com" class="channel-card">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            <span>aryanfargose@gmail.com</span>
+          </a>
+          <a href="tel:+918369894256" class="channel-card" title="Call Aryan">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+            <span>+91 83698 94256</span>
+          </a>
+          <button class="copy-email-btn" id="btn-copy-email" title="Copy Email Address">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+            <span id="copy-email-text">Copy Email</span>
+          </button>
+        </div>
+
+        <p class="contact-footer-motto">BUILD • LEARN • EXPLORE • REPEAT</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Scroll Height Track (800vh) -->
+  <div class="scroll-container" aria-hidden="true"></div>
+
+  <!-- Interactive Full Resume Modal (Quick View & Direct Download) -->
+  <div class="resume-modal-overlay" id="resume-modal" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title" aria-hidden="true">
+    <div class="resume-modal-container">
+      <div class="resume-modal-header">
+        <div class="resume-modal-title-group">
+          <span class="resume-modal-title" id="resume-modal-title">Aryan Fargose — Resume</span>
+          <span class="resume-modal-meta">OFFICIAL DOCUMENT</span>
+        </div>
+        <div class="resume-modal-controls">
+          <a href="/Aryan_Fargose_Resume.pdf" download="Aryan_Fargose_Resume.pdf" class="btn-resume-download" title="Download Official Resume PDF">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            <span>DOWNLOAD PDF</span>
+          </a>
+          <a href="/Aryan_Fargose_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-resume-tab" title="Open PDF in new tab">
+            <span>NEW TAB ↗</span>
+          </a>
+          <button class="btn-resume-close" id="btn-close-resume-modal" aria-label="Close Resume Modal">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"></path></svg>
+          </button>
+        </div>
+      </div>
+      <div class="resume-modal-body">
+        <div class="resume-paper">
+          <div class="resume-paper-header">
+            <div>
+              <h2 class="resume-paper-name">ARYAN FARGOSE</h2>
+              <div class="resume-paper-sub">B.Tech Information Technology • DJSCE, Mumbai</div>
+              <div class="resume-paper-contact">
+                <span>📍 Mumbai, India</span>
+                <span>✉️ aryanfargose@gmail.com</span>
+                <span>📞 +91 83698 94256</span>
+                <span>🔗 <a href="https://www.linkedin.com/in/aryan-fargose-b99330387" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+                <span>🐙 <a href="https://github.com/Aryan-Fargose" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="resume-paper-summary">
+            IT engineering student and builder focused on software development, problem solving, and creating useful web applications. Interested in combining technology, creativity, AI-assisted development, music, and cinema into meaningful projects.
+          </div>
+
+          <!-- Section: Projects -->
+          <div class="resume-sec">
+            <div class="resume-sec-title">PROJECTS</div>
+            
+            <div class="resume-item">
+              <div class="resume-item-top">
+                <span class="resume-item-heading">GitSearch</span>
+                <span class="resume-item-date" style="color: var(--accent-lime);">LIVE PROJECT</span>
+              </div>
+              <div class="resume-item-sub">React · Vite · GitHub REST API · Responsive UI</div>
+              <div class="resume-item-desc">Modern web application built with React + Vite, designed around a clean UI, responsive experience, and GitHub-focused exploration.</div>
+              <div style="margin-top: 6px; font-family: var(--font-mono); font-size: 0.75rem;">
+                <a href="https://git-search-rouge.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-lime); text-decoration: none;">Live Demo ↗</a> · 
+                <a href="https://github.com/Aryan-Fargose/GitSearch" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: none;">GitHub ↗</a>
+              </div>
+            </div>
+
+            <div class="resume-item">
+              <div class="resume-item-top">
+                <span class="resume-item-heading">CampusHub</span>
+                <span class="resume-item-date" style="color: var(--accent-cyan);">ONGOING</span>
+              </div>
+              <div class="resume-item-sub">React · Node.js · Vite · Campus Ecosystem</div>
+              <div class="resume-item-desc">Student-focused campus companion platform built to bring college utilities and community features together in one place. Features: Canteen menus, Attendance calculator, Anonymous confessions, Game Zone, Study material.</div>
+              <div style="margin-top: 6px; font-family: var(--font-mono); font-size: 0.75rem;">
+                <a href="https://campus-hub-delta-green.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-lime); text-decoration: none;">Live Demo ↗</a> · 
+                <a href="https://github.com/Aryan-Fargose/CampusHub" target="_blank" rel="noopener noreferrer" style="color: var(--text-muted); text-decoration: none;">GitHub ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section: Education -->
+          <div class="resume-sec">
+            <div class="resume-sec-title">EDUCATION</div>
+            
+            <div class="resume-item">
+              <div class="resume-item-top">
+                <span class="resume-item-heading">B.Tech – Information Technology</span>
+                <span class="resume-item-date">2025 — 2029</span>
+              </div>
+              <div class="resume-item-sub">Dwarkadas J. Sanghvi College of Engineering, Mumbai</div>
+              <div class="resume-item-desc"><strong>CGPA: 8.79</strong> • <strong>MHT-CET 2025: 98.4901 Percentile</strong></div>
+            </div>
+
+            <div class="resume-item">
+              <div class="resume-item-top">
+                <span class="resume-item-heading">HSC (PCM)</span>
+                <span class="resume-item-date">2023 — 2025</span>
+              </div>
+              <div class="resume-item-sub">St. Rocks Jr. College, Mumbai</div>
+            </div>
+
+            <div class="resume-item">
+              <div class="resume-item-top">
+                <span class="resume-item-heading">CBSE Class X</span>
+                <span class="resume-item-date">2023</span>
+              </div>
+              <div class="resume-item-sub">Notre Dame School, Mumbai</div>
+            </div>
+          </div>
+
+          <!-- Section: Technical Skills -->
+          <div class="resume-sec">
+            <div class="resume-sec-title">TECHNICAL SKILLS</div>
+            <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.84rem;">
+              <div><strong>Languages:</strong> Java (Intermediate), Python (Intermediate), C (Beginner), JavaScript (ES6+), TypeScript</div>
+              <div><strong>DSA:</strong> Arrays, Strings, Recursion, Sorting Algorithms</div>
+              <div><strong>Competitive Programming:</strong> CodeChef — Beginner Division</div>
+              <div><strong>Tools & Platforms:</strong> Git, GitHub, VS Code, MS Excel</div>
+            </div>
+          </div>
+
+          <!-- Section: Certifications -->
+          <div class="resume-sec">
+            <div class="resume-sec-title">CERTIFICATIONS</div>
+            <div class="resume-item">
+              <div class="resume-item-top">
+                <span class="resume-item-heading">Python Programming Fundamentals</span>
+                <span class="resume-item-date">Microsoft / Coursera · April 2026</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section: Areas of Interest & Soft Skills -->
+          <div class="resume-sec">
+            <div class="resume-sec-title">AREAS OF INTEREST & ATHLETICS</div>
+            <div style="display: flex; flex-direction: column; gap: 6px; font-size: 0.84rem; color: var(--text-secondary);">
+              <div>• <strong>Software Development:</strong> Building performant web and desktop applications.</div>
+              <div>• <strong>Data Structures & Algorithms:</strong> Strengthening problem-solving fundamentals through CodeChef practice.</div>
+              <div>• <strong>Open Source:</strong> Preparing to make active contributions as core systems mature.</div>
+              <div>• <strong>Interests & Hobbies:</strong> Music (creative focus), Cinema (visual storytelling), Sports (Cricket, Football, Badminton, Swimming, Running).</div>
+              <div>• <strong>Soft Skills:</strong> Communication, Time Management, Active Listening, Teamwork, Adaptability, Fast Learner.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript Entrypoint -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
