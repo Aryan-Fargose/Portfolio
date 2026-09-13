@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Aryan Fargose | IT Engineering Student & Developer Portfolio</title>
   <meta name="description" content="Cinematic, interactive personal portfolio of Aryan Fargose — IT Engineering Student at DJSCE Mumbai, Builder, and Technology Enthusiast.">
   <meta name="keywords" content="Aryan Fargose, DJSCE, IT Engineering, CampusHub, GitSearch, Software Developer, Mumbai">
@@ -95,6 +95,90 @@
     <a href="https://www.linkedin.com/in/aryan-fargose-b99330387" target="_blank" rel="noopener noreferrer" class="telemetry-social-link" title="LinkedIn Profile" aria-label="LinkedIn Profile">
       <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
     </a>
+  </div>
+
+  <!-- Mobile Floating Bottom Chapter Dock -->
+  <aside class="mobile-nav-dock" id="mobile-nav-dock" aria-label="Mobile Chapter Navigation">
+    <button class="mobile-nav-arrow" id="btn-mobile-prev" aria-label="Previous Chapter" title="Previous Chapter">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"></path></svg>
+    </button>
+    <button class="mobile-nav-trigger" id="btn-mobile-drawer-toggle" aria-label="Open Chapter Selector" aria-expanded="false">
+      <span class="mobile-nav-num" id="mobile-nav-num">01 / 08</span>
+      <span class="mobile-nav-title" id="mobile-nav-title">INTRO</span>
+      <svg class="mobile-nav-caret" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+    </button>
+    <button class="mobile-nav-arrow" id="btn-mobile-next" aria-label="Next Chapter" title="Next Chapter">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg>
+    </button>
+  </aside>
+
+  <!-- Mobile Bottom Chapter Sheet Drawer -->
+  <div class="mobile-drawer-overlay" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Select Chapter" aria-hidden="true">
+    <div class="mobile-drawer-sheet">
+      <div class="mobile-drawer-handle"></div>
+      <div class="mobile-drawer-header">
+        <span class="mobile-drawer-title">CHAPTER INDEX</span>
+        <button class="mobile-drawer-close" id="btn-mobile-drawer-close" aria-label="Close Chapter Index">✕</button>
+      </div>
+      <div class="mobile-drawer-links">
+        <button class="mobile-drawer-item active" data-target="intro">
+          <span class="drawer-item-num">01</span>
+          <div class="drawer-item-text">
+            <span class="drawer-item-label">Intro</span>
+            <span class="drawer-item-desc">System Start & Monumental Profile</span>
+          </div>
+        </button>
+        <button class="mobile-drawer-item" data-target="about">
+          <span class="drawer-item-num">02</span>
+          <div class="drawer-item-text">
+            <span class="drawer-item-label">About</span>
+            <span class="drawer-item-desc">Engineering Foundations & Values</span>
+          </div>
+        </button>
+        <button class="mobile-drawer-item" data-target="education">
+          <span class="drawer-item-num">03</span>
+          <div class="drawer-item-text">
+            <span class="drawer-item-label">Education</span>
+            <span class="drawer-item-desc">DJSCE Mumbai (B.Tech IT · CGPA 8.79)</span>
+          </div>
+        </button>
+        <button class="mobile-drawer-item" data-target="projects">
+          <span class="drawer-item-num">04</span>
+          <div class="drawer-item-text">
+            <span class="drawer-item-label">Work</span>
+            <span class="drawer-item-desc">CampusHub & GitSearch</span>
+          </div>
+        </button>
+        <button class="mobile-drawer-item" data-target="skills">
+          <span class="drawer-item-num">05</span>
+          <div class="drawer-item-text">
+            <span class="drawer-item-label">Skills & Hardware</span>
+            <span class="drawer-item-desc">Full Stack, Canvas & System HUD</span>
+          </div>
+        </button>
+        <button class="mobile-drawer-item" data-target="interests">
+          <span class="drawer-item-num">06</span>
+          <div class="drawer-item-text">
+            <span class="drawer-item-label">Life & Cinema</span>
+            <span class="drawer-item-desc">Acoustics, Visual Craft & Sports</span>
+          </div>
+        </button>
+        <button class="mobile-drawer-item" data-target="aspirations">
+          <span class="drawer-item-num">07</span>
+          <div class="drawer-item-text">
+            <span class="drawer-item-label">Next</span>
+            <span class="drawer-item-desc">Engineering for Impact & Growth</span>
+          </div>
+        </button>
+        <button class="mobile-drawer-item" data-target="contact">
+          <span class="drawer-item-num">08</span>
+          <div class="drawer-item-text">
+            <span class="drawer-item-label">Contact</span>
+            <span class="drawer-item-desc">Direct Lines, Resume & Inquiries</span>
+          </div>
+        </button>
+      </div>
+    </div>
   </div>
 
   <!-- Fixed High-Performance Animation Canvas -->
@@ -241,9 +325,13 @@
         </p>
         <h2 class="section-heading">A few things<br><i>in motion.</i></h2>
       </div>
+      <div class="mobile-project-tabs" id="mobile-project-tabs" role="tablist" aria-label="Select Project">
+        <button class="mobile-proj-tab active" data-proj-target="campushub" role="tab" aria-selected="true">01 CAMPUSHUB</button>
+        <button class="mobile-proj-tab" data-proj-target="gitsearch" role="tab" aria-selected="false">02 GITSEARCH</button>
+      </div>
       <div class="projects-deck">
         <!-- Project 1: CampusHub (Flagship) -->
-        <article class="project-card featured">
+        <article class="project-card featured active" data-proj-card="campushub">
           <div>
             <div class="project-visual project-visual-1">
               <span class="project-visual-num">01 / PLATFORM</span>
@@ -278,7 +366,7 @@
         </article>
 
         <!-- Project 2: GitSearch -->
-        <article class="project-card">
+        <article class="project-card" data-proj-card="gitsearch">
           <div>
             <div class="project-visual project-visual-2">
               <span class="project-visual-num">02 / TOOLING</span>
@@ -316,8 +404,12 @@
 
     <!-- 05: SKILLS & EXPLODED HARDWARE HUD -->
     <section class="chapter-panel" id="panel-skills" aria-label="Skills and Hardware Section">
+      <div class="mobile-skills-tabs" id="mobile-skills-tabs" role="tablist" aria-label="Select Capabilities View">
+        <button class="mobile-skill-tab active" data-skill-target="matrix" role="tab" aria-selected="true">TECH CAPABILITIES</button>
+        <button class="mobile-skill-tab" data-skill-target="hardware" role="tab" aria-selected="false">HARDWARE HUD</button>
+      </div>
       <div class="skills-layout">
-        <div>
+        <div class="skills-matrix-col active" id="skills-matrix-col">
           <p class="kicker">
             <span class="kicker-rule"></span>
             <span>05 // CAPABILITIES</span>
@@ -390,49 +482,51 @@
           </div>
         </div>
 
-        <!-- Hardware Metaphors HUD -->
-        <div class="hardware-hud" id="hardware-hud" aria-label="Component Metaphors">
-          <div class="hud-item">
-            <div class="hud-left">
-              <span class="hud-chip">CPU</span>
-              <span class="hud-metaphor">Problem Solving & Logic</span>
+        <!-- Hardware Metaphors HUD Column -->
+        <div class="hardware-hud-col" id="hardware-hud-col">
+          <div class="hardware-hud" id="hardware-hud" aria-label="Component Metaphors">
+            <div class="hud-item">
+              <div class="hud-left">
+                <span class="hud-chip">CPU</span>
+                <span class="hud-metaphor">Problem Solving & Logic</span>
+              </div>
+              <span class="hud-metric">Algorithmic Rigor</span>
             </div>
-            <span class="hud-metric">Algorithmic Rigor</span>
-          </div>
-          <div class="hud-item">
-            <div class="hud-left">
-              <span class="hud-chip">GPU</span>
-              <span class="hud-metaphor">Creativity & Visual Computing</span>
+            <div class="hud-item">
+              <div class="hud-left">
+                <span class="hud-chip">GPU</span>
+                <span class="hud-metaphor">Creativity & Visual Computing</span>
+              </div>
+              <span class="hud-metric">Pixel Precision</span>
             </div>
-            <span class="hud-metric">Pixel Precision</span>
-          </div>
-          <div class="hud-item">
-            <div class="hud-left">
-              <span class="hud-chip">RAM</span>
-              <span class="hud-metaphor">High-Bandwidth Multitasking</span>
+            <div class="hud-item">
+              <div class="hud-left">
+                <span class="hud-chip">RAM</span>
+                <span class="hud-metaphor">High-Bandwidth Multitasking</span>
+              </div>
+              <span class="hud-metric">Dynamic Flow</span>
             </div>
-            <span class="hud-metric">Dynamic Flow</span>
-          </div>
-          <div class="hud-item">
-            <div class="hud-left">
-              <span class="hud-chip">SSD</span>
-              <span class="hud-metaphor">Projects & Knowledge</span>
+            <div class="hud-item">
+              <div class="hud-left">
+                <span class="hud-chip">SSD</span>
+                <span class="hud-metaphor">Projects & Knowledge</span>
+              </div>
+              <span class="hud-metric">Persistent Storage</span>
             </div>
-            <span class="hud-metric">Persistent Storage</span>
-          </div>
-          <div class="hud-item">
-            <div class="hud-left">
-              <span class="hud-chip">BOARD</span>
-              <span class="hud-metaphor">Interconnected Architecture</span>
+            <div class="hud-item">
+              <div class="hud-left">
+                <span class="hud-chip">BOARD</span>
+                <span class="hud-metaphor">Interconnected Architecture</span>
+              </div>
+              <span class="hud-metric">System Synergy</span>
             </div>
-            <span class="hud-metric">System Synergy</span>
-          </div>
-          <div class="hud-item">
-            <div class="hud-left">
-              <span class="hud-chip">FANS</span>
-              <span class="hud-metaphor">Composed Under Pressure</span>
+            <div class="hud-item">
+              <div class="hud-left">
+                <span class="hud-chip">FANS</span>
+                <span class="hud-metaphor">Composed Under Pressure</span>
+              </div>
+              <span class="hud-metric">Thermal Balance</span>
             </div>
-            <span class="hud-metric">Thermal Balance</span>
           </div>
         </div>
       </div>

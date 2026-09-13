@@ -1946,8 +1946,29 @@ h1 i, h2 i, h3 i, .editorial-italic {
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN
+   MOBILE-ONLY CONTROLS BASE (Hidden on Desktop)
    ========================================================================== */
+.mobile-nav-dock {
+  display: none;
+}
+
+.mobile-drawer-overlay {
+  display: none;
+}
+
+.mobile-project-tabs {
+  display: none;
+}
+
+.mobile-skills-tabs {
+  display: none;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN & MOBILE ARCHITECTURE
+   ========================================================================== */
+
+/* Tablet & Intermediate Viewports */
 @media (max-width: 1024px) {
   .panel-grid-side {
     grid-template-columns: 1fr;
@@ -1967,7 +1988,7 @@ h1 i, h2 i, h3 i, .editorial-italic {
     grid-template-columns: 1fr 1fr;
   }
   .floating-nav {
-    display: none; /* Screen space preserved on tablets/mobiles */
+    display: none; /* Desktop nav hidden on tablets/mobiles */
   }
   .corner-indicator {
     top: 20px;
@@ -1979,45 +2000,746 @@ h1 i, h2 i, h3 i, .editorial-italic {
   }
 }
 
-@media (max-width: 640px) {
+/* Phone / Mobile Viewports (<= 768px) */
+@media (max-width: 768px) {
+  /* Effortless, snappier thumb scrolling travel for 8 chapters */
+  .scroll-container {
+    height: 520vh;
+  }
+
+  /* Stage & Viewport Framing: Anchored in lower half to leave top stage for 3D canvas */
   .chapter-viewport {
-    padding: 60px 20px;
+    position: fixed;
+    inset: 0;
+    padding: max(56px, env(safe-area-inset-top, 56px)) 16px max(74px, env(safe-area-inset-bottom, 74px));
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    pointer-events: none;
   }
+
+  .chapter-panel {
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    max-height: calc(100svh - 120px);
+  }
+
+  /* Intro Chapter (Hero) retains centered monumental layout */
+  .chapter-panel#panel-intro {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-height: none;
+  }
+
+  /* Glass Cards Architecture on Mobile */
   .glass-card {
-    padding: 24px;
+    max-height: calc(52svh - 10px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 18px 20px;
+    border-radius: 16px;
+    background: rgba(13, 17, 23, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
+    transform: translateZ(0);
+    width: 100%;
+    margin: 0 auto;
   }
+
+  /* Thin sleek scrollbars for mobile cards */
+  .glass-card::-webkit-scrollbar,
+  .projects-deck .project-card::-webkit-scrollbar,
+  .skills-matrix-col::-webkit-scrollbar,
+  .hardware-hud-col::-webkit-scrollbar,
+  .mobile-drawer-links::-webkit-scrollbar,
+  .resume-modal-body::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  .glass-card::-webkit-scrollbar-thumb,
+  .projects-deck .project-card::-webkit-scrollbar-thumb,
+  .skills-matrix-col::-webkit-scrollbar-thumb,
+  .hardware-hud-col::-webkit-scrollbar-thumb,
+  .mobile-drawer-links::-webkit-scrollbar-thumb,
+  .resume-modal-body::-webkit-scrollbar-thumb {
+    background: rgba(56, 189, 248, 0.4);
+    border-radius: 9999px;
+  }
+
+  /* Corner Indicator & Telemetry */
+  .corner-indicator {
+    top: max(12px, env(safe-area-inset-top, 12px));
+    left: 14px;
+    gap: 1px;
+  }
+
+  .corner-number {
+    font-size: 0.92rem;
+  }
+
+  .corner-badge {
+    font-size: 0.6rem;
+    padding: 1px 5px;
+  }
+
+  .corner-title {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+  }
+
+  .corner-telemetry {
+    top: max(12px, env(safe-area-inset-top, 12px));
+    right: 14px;
+    gap: 6px;
+  }
+
+  .telemetry-tag {
+    padding: 4px 8px;
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* Chapter 01: Hero on Mobile */
+  .hero-portrait-frame {
+    width: 105px;
+    height: 105px;
+    margin-bottom: 2px;
+  }
+
+  .hero-portrait-badge {
+    font-size: 0.62rem;
+    padding: 3px 10px;
+    margin-top: -10px;
+  }
+
+  .kicker {
+    font-size: 0.64rem;
+    margin-bottom: 10px;
+    gap: 8px;
+  }
+
+  .kicker-rule {
+    width: 24px;
+  }
+
+  .hero-name-big {
+    font-size: clamp(2rem, 8.5vw, 2.6rem);
+    line-height: 1.05;
+    margin-bottom: 4px;
+  }
+
+  .hero-title-sub {
+    font-size: clamp(0.95rem, 3.8vw, 1.15rem);
+    line-height: 1.25;
+  }
+
+  .hero-subtitle {
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .hero-pills {
+    gap: 6px;
+    margin-bottom: 20px;
+    max-width: 320px;
+  }
+
+  .hero-pill {
+    font-size: 0.68rem;
+    padding: 4px 10px;
+  }
+
+  .hero-scroll-prompt {
+    font-size: 0.68rem;
+    gap: 6px;
+  }
+
+  /* Typography on Mobile */
   .section-heading {
-    font-size: 1.65rem;
+    font-size: clamp(1.4rem, 5.5vw, 1.85rem);
+    line-height: 1.15;
+    margin-bottom: 10px;
   }
-  .hero-title {
-    font-size: 2.2rem;
+
+  .section-description {
+    font-size: 0.84rem;
+    line-height: 1.55;
+    margin-bottom: 14px;
   }
-  .interests-grid {
-    grid-template-columns: 1fr;
+
+  /* Chapter 02: About */
+  .about-meta-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 14px;
+    padding-top: 12px;
   }
+
+  .about-meta-item .meta-label {
+    font-size: 0.62rem;
+  }
+
+  .about-meta-item .meta-val {
+    font-size: 0.8rem;
+  }
+
+  /* Chapter 03: Education */
+  .edu-timeline h3 {
+    font-size: 1.05rem !important;
+  }
+
+  .course-tags {
+    gap: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px !important;
+  }
+
+  .course-tag {
+    font-size: 0.68rem;
+    padding: 4px 8px;
+  }
+
+  /* Chapter 04: Projects (CampusHub & GitSearch) Mobile Tab Switcher */
+  .mobile-project-tabs {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 12px;
+    user-select: none;
+  }
+
+  .mobile-proj-tab {
+    flex: 1;
+    padding: 9px 12px;
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+  }
+
+  .mobile-proj-tab.active {
+    background: rgba(56, 189, 248, 0.16);
+    border-color: rgba(56, 189, 248, 0.5);
+    color: var(--accent-cyan);
+    box-shadow: 0 0 16px rgba(56, 189, 248, 0.25);
+  }
+
+  .projects-deck {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .projects-deck .project-card {
+    display: none;
+    max-height: calc(52svh - 10px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 18px;
+    border-radius: 16px;
+    background: rgba(13, 17, 23, 0.94);
+  }
+
+  .projects-deck .project-card.active {
+    display: flex;
+  }
+
+  .project-visual {
+    height: 90px;
+    margin-bottom: 12px;
+  }
+
+  .project-title {
+    font-size: 1.35rem;
+    margin-bottom: 6px;
+  }
+
+  .project-desc {
+    font-size: 0.82rem;
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+
+  .tag-row {
+    margin: 10px 0 16px;
+    gap: 5px;
+  }
+
+  .tag-row span {
+    font-size: 0.68rem;
+    padding: 3px 7px;
+  }
+
+  .project-actions {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .project-actions .btn-primary,
+  .project-actions .btn-secondary {
+    flex: 1;
+    justify-content: center;
+    padding: 9px 14px;
+    font-size: 0.75rem;
+  }
+
+  /* Chapter 05: Skills & Hardware Metaphors */
+  .mobile-skills-tabs {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 12px;
+    user-select: none;
+  }
+
+  .mobile-skill-tab {
+    flex: 1;
+    padding: 9px 12px;
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+  }
+
+  .mobile-skill-tab.active {
+    background: rgba(216, 243, 107, 0.16);
+    border-color: rgba(216, 243, 107, 0.5);
+    color: var(--accent-lime);
+    box-shadow: 0 0 16px rgba(216, 243, 107, 0.25);
+  }
+
+  .skills-layout {
+    display: block;
+    width: 100%;
+  }
+
+  .skills-matrix-col {
+    display: none;
+    max-height: calc(52svh - 10px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 18px;
+    border-radius: 16px;
+    background: rgba(13, 17, 23, 0.94);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .skills-matrix-col.active {
+    display: block;
+  }
+
+  .hardware-hud-col {
+    display: none;
+    max-height: calc(52svh - 10px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 18px;
+    border-radius: 16px;
+    background: rgba(13, 17, 23, 0.94);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .hardware-hud-col.active {
+    display: block;
+  }
+
   .skills-matrix {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
+
+  .skill-cat-card {
+    padding: 14px;
+    border-radius: 10px;
+  }
+
+  .hardware-hud {
+    opacity: 1 !important;
+    transform: none !important;
+    gap: 8px;
+  }
+
+  .hud-item {
+    padding: 10px 12px;
+  }
+
+  .hud-metaphor {
+    font-size: 0.78rem;
+  }
+
+  .hud-metric {
+    font-size: 0.65rem;
+  }
+
+  /* IDEA Core Indicator Badge */
+  .idea-core-highlight {
+    bottom: max(68px, env(safe-area-inset-bottom, 68px));
+    padding: 5px 14px;
+    gap: 8px;
+    font-size: 0.68rem;
+  }
+
+  .core-flow {
+    display: none; /* Keep badge compact on phones */
+  }
+
+  /* Chapter 06: Interests & Cinema */
+  .panel-content-center {
+    max-height: calc(52svh - 10px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 18px 20px;
+    border-radius: 16px;
+    background: rgba(13, 17, 23, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+  }
+
+  .interests-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  .interest-card {
+    padding: 16px;
+    text-align: left;
+  }
+
+  /* Chapter 07: Aspirations */
   .aspirations-grid {
     grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 14px;
   }
+
+  .aspiration-card {
+    padding: 14px;
+  }
+
+  .aspiration-card h4 {
+    font-size: 0.95rem;
+  }
+
+  .aspiration-card p {
+    font-size: 0.78rem;
+  }
+
+  /* Chapter 08: Contact & Channels */
+  .contact-container {
+    max-height: calc(52svh - 10px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 18px 20px;
+    border-radius: 16px;
+    background: rgba(13, 17, 23, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+  }
+
   .contact-heading {
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 6.5vw, 2.3rem);
+    margin-bottom: 10px;
   }
+
+  .contact-sub {
+    font-size: 0.82rem;
+    margin-bottom: 16px;
+  }
+
   .contact-channels {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
     width: 100%;
+    margin-bottom: 16px;
   }
+
   .channel-card {
-    width: 100%;
+    padding: 10px 12px;
+    font-size: 0.74rem;
     justify-content: center;
+    border-radius: 10px;
   }
+
+  .channel-card.highlight-resume,
+  .channel-card.highlight-view-resume {
+    grid-column: span 2;
+    padding: 11px 16px;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
   .copy-email-btn {
-    width: 100%;
+    grid-column: span 2;
+    padding: 10px 14px;
+    font-size: 0.78rem;
     justify-content: center;
+    border-radius: 10px;
   }
-  .feature-list {
-    grid-template-columns: 1fr;
+
+  .contact-footer-motto {
+    font-size: 0.68rem;
+    margin-top: 10px;
+  }
+
+  /* ==========================================================================
+     MOBILE NAVIGATION DOCK & DRAWER STYLES
+     ========================================================================== */
+  .mobile-nav-dock {
+    display: flex;
+    position: fixed;
+    bottom: max(16px, env(safe-area-inset-bottom, 16px));
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 60;
+    align-items: center;
+    gap: 6px;
+    background: rgba(13, 17, 23, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 9999px;
+    padding: 4px 8px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85), 0 0 20px rgba(56, 189, 248, 0.1);
+    user-select: none;
+    max-width: calc(100vw - 32px);
+  }
+
+  .mobile-nav-arrow {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--accent-cyan);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .mobile-nav-arrow:active {
+    background: var(--accent-cyan);
+    color: #080c10;
+    transform: scale(0.92);
+  }
+
+  .mobile-nav-trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    padding: 6px 12px;
+    cursor: pointer;
+    font-family: var(--font-mono);
+  }
+
+  .mobile-nav-num {
+    font-size: 0.72rem;
+    color: var(--accent-lime);
+    font-weight: 700;
+  }
+
+  .mobile-nav-title {
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  .mobile-nav-caret {
+    color: var(--text-muted);
+    transition: transform 0.25s ease;
+  }
+
+  .mobile-nav-trigger[aria-expanded="true"] .mobile-nav-caret {
+    transform: rotate(180deg);
+  }
+
+  .mobile-drawer-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 120;
+    background: rgba(8, 12, 16, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .mobile-drawer-overlay.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .mobile-drawer-sheet {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 82svh;
+    background: #0d1217;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px 24px 0 0;
+    padding: 12px 20px max(24px, env(safe-area-inset-bottom, 24px));
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.85);
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .mobile-drawer-overlay.open .mobile-drawer-sheet {
+    transform: translateY(0);
+  }
+
+  .mobile-drawer-handle {
+    width: 36px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 9999px;
+    margin: 4px auto 14px;
+  }
+
+  .mobile-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .mobile-drawer-title {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    color: var(--accent-lime);
+    font-weight: 700;
+  }
+
+  .mobile-drawer-close {
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    color: var(--text-muted);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 0.85rem;
+  }
+
+  .mobile-drawer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-right: 4px;
+  }
+
+  .mobile-drawer-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 11px 14px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid transparent;
+    color: var(--text-primary);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+  }
+
+  .mobile-drawer-item:active, .mobile-drawer-item.active {
+    background: rgba(216, 243, 107, 0.1);
+    border-color: rgba(216, 243, 107, 0.35);
+  }
+
+  .drawer-item-num {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent-lime);
+  }
+
+  .drawer-item-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .drawer-item-label {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .drawer-item-desc {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--text-muted);
+  }
+
+  /* Resume Modal on Mobile */
+  .resume-modal-overlay {
+    padding: 16px 12px;
+  }
+
+  .resume-modal-container {
+    max-height: 94svh;
+    border-radius: 16px;
+  }
+
+  .resume-modal-header {
+    padding: 12px 16px;
+  }
+
+  .resume-modal-title {
+    font-size: 0.95rem;
+  }
+
+  .resume-modal-meta {
+    display: none;
+  }
+
+  .resume-paper {
+    padding: 16px;
+  }
+
+  .resume-paper-name {
+    font-size: 1.45rem;
   }
 }
 

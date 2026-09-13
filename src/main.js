@@ -99,6 +99,15 @@ window.addEventListener('touchmove', () => {
   dismissLoadingScreen();
 }, { once: true, passive: true });
 
+if (loadingScreen) {
+  loadingScreen.addEventListener('click', () => {
+    dismissLoadingScreen();
+  });
+  loadingScreen.addEventListener('touchend', () => {
+    dismissLoadingScreen();
+  }, { passive: true });
+}
+
 window.addEventListener('keydown', (e) => {
   if (['ArrowDown', 'PageDown', 'Space'].includes(e.code)) {
     dismissLoadingScreen();

@@ -60,16 +60,22 @@ export class CanvasRenderer {
   resize() {
     const width = window.innerWidth;
     const height = window.innerHeight;
-    this.dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const isMobile = width <= 768;
+
+    // On mobile, clamp DPR to 1.5 to prevent memory pressure & dropped frames
+    this.dpr = isMobile
+      ? Math.min(window.devicePixelRatio || 1, 1.5)
+      : Math.min(window.devicePixelRatio || 1, 2);
 
     this.canvas.width = Math.floor(width * this.dpr);
     this.canvas.height = Math.floor(height * this.dpr);
     this.canvas.style.width = `${width}px`;
     this.canvas.style.height = `${height}px`;
 
-    // High quality scaling
+    // Scaling quality & lerp responsiveness
     this.ctx.imageSmoothingEnabled = true;
-    this.ctx.imageSmoothingQuality = 'high';
+    this.ctx.imageSmoothingQuality = isMobile ? 'medium' : 'high';
+    this.lerpFactor = isMobile ? 0.48 : 0.32;
   }
 
   /**
@@ -218,21 +224,38 @@ export class CanvasRenderer {
 
     let drawW, drawH, drawX, drawY;
 
-    if (canvasAspect > imgAspect) {
-      // Screen is wider than 9:16 (Desktop)
-      // Scaled up by ~28% (within the 30% broader boundary) for cinematic prominence
-      const scaleMultiplier = window.innerWidth < 1024 ? 0.98 : 1.18;
-      drawH = ch * scaleMultiplier;
+    const isMobile = window.innerWidth <= 768;
+
+    if (!isMobile) {
+      if (canvasAspect > imgAspect) {
+        // Screen is wider than 9:16 (Desktop)
+        // Scaled up by ~28% (within the 30% broader boundary) for cinematic prominence
+        const scaleMultiplier = window.innerWidth < 1024 ? 0.98 : 1.18;
+        drawH = ch * scaleMultiplier;
+        drawW = drawH * imgAspect;
+        drawX = (cw - drawW) / 2;
+        drawY = (ch - drawH) / 2;
+      } else {
+        // Desktop portrait orientation fallback
+        const scaleMultiplier = 0.98;
+        drawW = cw * scaleMultiplier;
+        drawH = drawW / imgAspect;
+        drawX = (cw - drawW) / 2;
+        drawY = (ch - drawH) / 2;
+      }
+    } else {
+      // Mobile / Phone Portrait: Framed in upper visual stage
+      // Leaves comfortable lower screen area for readable chapter cards
+      const maxStageH = ch * 0.46;
+      drawH = Math.min(maxStageH, (cw * 0.88) / imgAspect);
       drawW = drawH * imgAspect;
       drawX = (cw - drawW) / 2;
-      drawY = (ch - drawH) / 2;
-    } else {
-      // Screen is narrower (Mobile / portrait)
-      const scaleMultiplier = 0.98;
-      drawW = cw * scaleMultiplier;
-      drawH = drawW / imgAspect;
-      drawX = (cw - drawW) / 2;
-      drawY = (ch - drawH) / 2;
+
+      // In chapter 1 (intro), smoothly glide from center to top stage
+      const heroShiftRatio = Math.max(0, 1 - (this.currentFrame / (this.totalFrames * 0.12)));
+      const heroCenterY = (ch - drawH) / 2 * 0.7;
+      const topStageY = Math.max(16, ch * 0.04);
+      drawY = topStageY + (heroCenterY - topStageY) * heroShiftRatio;
     }
 
     // Draw the active image frame
@@ -243,7 +266,10 @@ export class CanvasRenderer {
   }
 
   renderSubtleEdgeBlend(cw, ch) {
-    // Subtle radial gradient overlay to eliminate any hard seam at frame edges
+    // Only run on desktop/ultrawide screens where canvas edge blends with dark borders
+    // On mobile, CSS .ambient-overlay provides hardware-accelerated radial blend at 0 CPU cost
+    if (window.innerWidth <= 768) return;
+
     const gradient = this.ctx.createRadialGradient(
       cw / 2, ch / 2, Math.min(cw, ch) * 0.35,
       cw / 2, ch / 2, Math.max(cw, ch) * 0.75

@@ -95,6 +95,128 @@ export class ScrollController {
         this.scrollToChapter('about');
       });
     }
+
+    // Initialize Mobile Navigation & Interactive Switchers
+    this.bindMobileControls();
+  }
+
+  bindMobileControls() {
+    const btnPrev = document.getElementById('btn-mobile-prev');
+    const btnNext = document.getElementById('btn-mobile-next');
+    const btnToggle = document.getElementById('btn-mobile-drawer-toggle');
+    const drawer = document.getElementById('mobile-drawer');
+    const btnClose = document.getElementById('btn-mobile-drawer-close');
+    const drawerItems = document.querySelectorAll('.mobile-drawer-item');
+
+    if (btnPrev) {
+      btnPrev.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.goToPreviousChapter();
+      });
+    }
+
+    if (btnNext) {
+      btnNext.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.goToNextChapter();
+      });
+    }
+
+    const openDrawer = () => {
+      if (!drawer) return;
+      drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden', 'false');
+      if (btnToggle) btnToggle.setAttribute('aria-expanded', 'true');
+    };
+
+    const closeDrawer = () => {
+      if (!drawer) return;
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
+      if (btnToggle) btnToggle.setAttribute('aria-expanded', 'false');
+    };
+
+    if (btnToggle) {
+      btnToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (drawer && drawer.classList.contains('open')) {
+          closeDrawer();
+        } else {
+          openDrawer();
+        }
+      });
+    }
+
+    if (btnClose) {
+      btnClose.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeDrawer();
+      });
+    }
+
+    if (drawer) {
+      drawer.addEventListener('click', (e) => {
+        if (e.target === drawer) {
+          closeDrawer();
+        }
+      });
+    }
+
+    drawerItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = item.getAttribute('data-target');
+        closeDrawer();
+        this.scrollToChapter(targetId);
+      });
+    });
+
+    // Mobile Project Switcher Tabs (Chapter 04)
+    const projTabs = document.querySelectorAll('.mobile-proj-tab');
+    const projCards = document.querySelectorAll('[data-proj-card]');
+    projTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetProj = tab.getAttribute('data-proj-target');
+        projTabs.forEach(t => {
+          const isActive = t === tab;
+          t.classList.toggle('active', isActive);
+          t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+        projCards.forEach(card => {
+          const matches = card.getAttribute('data-proj-card') === targetProj;
+          card.classList.toggle('active', matches);
+        });
+      });
+    });
+
+    // Mobile Skills Switcher Tabs (Chapter 05)
+    const skillTabs = document.querySelectorAll('.mobile-skill-tab');
+    const matrixCol = document.getElementById('skills-matrix-col');
+    const hardwareCol = document.getElementById('hardware-hud-col');
+    skillTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-skill-target');
+        skillTabs.forEach(t => {
+          const isActive = t === tab;
+          t.classList.toggle('active', isActive);
+          t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+        if (matrixCol) matrixCol.classList.toggle('active', target === 'matrix');
+        if (hardwareCol) hardwareCol.classList.toggle('active', target === 'hardware');
+      });
+    });
+  }
+
+  goToPreviousChapter() {
+    if (this.currentChapterIndex > 0) {
+      this.scrollToChapter(this.chapters[this.currentChapterIndex - 1].id);
+    }
+  }
+
+  goToNextChapter() {
+    if (this.currentChapterIndex < this.chapters.length - 1) {
+      this.scrollToChapter(this.chapters[this.currentChapterIndex + 1].id);
+    }
   }
 
   bindKeyboard() {
@@ -203,9 +325,28 @@ export class ScrollController {
         link.removeAttribute('aria-current');
       }
     });
+
+    // Sync mobile bottom dock
+    const mobileNum = document.getElementById('mobile-nav-num');
+    const mobileTitle = document.getElementById('mobile-nav-title');
+    if (mobileNum) mobileNum.textContent = chapter.num;
+    if (mobileTitle) mobileTitle.textContent = chapter.title;
+
+    // Sync mobile drawer links
+    const drawerItems = document.querySelectorAll('.mobile-drawer-item');
+    drawerItems.forEach(item => {
+      const target = item.getAttribute('data-target');
+      if (target === chapter.id) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
   }
 
   updateChapterOverlays(progress) {
+    const isMobile = window.innerWidth <= 768;
+
     this.chapters.forEach(chap => {
       const el = document.getElementById(`panel-${chap.id}`);
       if (!el) return;
@@ -219,7 +360,7 @@ export class ScrollController {
           el.style.pointerEvents = opacity > 0.2 ? 'auto' : 'none';
           el.classList.add('active');
           el.classList.remove('hidden');
-          const translateY = progress * -80;
+          const translateY = isMobile ? progress * -30 : progress * -80;
           el.style.transform = `translate3d(0, ${translateY.toFixed(1)}px, 0)`;
         } else {
           el.style.opacity = '0';
@@ -239,7 +380,7 @@ export class ScrollController {
           el.style.pointerEvents = opacity > 0.2 ? 'auto' : 'none';
           el.classList.add('active');
           el.classList.remove('hidden');
-          const translateY = (1 - fadeProgress) * 40;
+          const translateY = isMobile ? (1 - fadeProgress) * 15 : (1 - fadeProgress) * 40;
           el.style.transform = `translate3d(0, ${translateY.toFixed(1)}px, 0)`;
         } else {
           el.style.opacity = '0';
@@ -261,12 +402,12 @@ export class ScrollController {
         const opacity = Math.max(0, Math.min(1, normalized * 1.6 - 0.15));
         
         el.style.opacity = opacity.toFixed(3);
-        el.style.pointerEvents = opacity > 0.4 ? 'auto' : 'none';
+        el.style.pointerEvents = opacity > 0.35 ? 'auto' : 'none';
         el.classList.add('active');
         el.classList.remove('hidden');
 
-        // Micro-parallax
-        const translateY = (progress - mid) * -40;
+        // Micro-parallax tuned per device
+        const translateY = isMobile ? (progress - mid) * -12 : (progress - mid) * -40;
         el.style.transform = `translate3d(0, ${translateY.toFixed(1)}px, 0)`;
       } else {
         el.style.opacity = '0';
