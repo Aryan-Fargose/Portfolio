@@ -43,11 +43,11 @@ const renderer = new CanvasRenderer(canvasElement, {
       loadingStatus.textContent = `INITIALIZING SYSTEM // ${percent}%`;
     }
     if (loadingPercent) {
-      loadingPercent.textContent = `CACHING FRAME [${String(loaded).padStart(3, '0')} / ${total}]`;
+      loadingPercent.textContent = `HYDRATING INITIAL FRAMES [${String(loaded).padStart(2, '0')} / ${String(total).padStart(2, '0')}]`;
     }
   },
   onInitialReady: () => {
-    // Initial 25 frames are ready - unlock interaction
+    // Initial critical frames are ready - unlock interaction
     if (loadingEnterBtn) {
       loadingEnterBtn.classList.add('ready');
     }
@@ -55,7 +55,7 @@ const renderer = new CanvasRenderer(canvasElement, {
     // Auto-dismiss after brief moment or on user intent
     setTimeout(() => {
       dismissLoadingScreen();
-    }, 600);
+    }, 400);
   },
   onAllLoaded: () => {
     if (loadingStatus) {
