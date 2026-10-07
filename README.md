@@ -1,91 +1,49 @@
-DEPLOYMENT LINK: https://portfolio-nu-ten-b8bg7s8ws7.vercel.app/
+# Aryan Fargose — Cinematic Developer Portfolio
 
-# Aryan Anand Fargose — Cinematic Interactive Portfolio
-
-A premium, interactive personal portfolio website engineered with smooth frame-scrubbed canvas animation, cyber-minimalist dark aesthetics, and interactive project showcases.
-
-![Portfolio Banner](public/aryan-fargose.jpg)
-
----
-
-## ⚡ Highlights & Key Features
-
-- **300-Frame Scroll-Driven Canvas Engine**: Custom high-performance HTML5 Canvas renderer scrubbing through 300 sequential animation frames at 30 FPS, locked to scroll delta with fluid easing and seamless background blending (`#080c10`).
-- **Initial Identity Reveal**: Cinematic monumental opening title (*ARYAN FARGOSE*) and portrait that gracefully dissolves into the interactive story narrative as you scroll.
-- **Projects Matrix**:
-  - 🌐 **[CampusHub](https://campus-hub-delta-green.vercel.app/)**: Centralized engineering platform connecting students with hackathons, internships, academic vaults, and community updates.
-  - 🔍 **[GitSearch](https://git-search-rouge.vercel.app/)**: GitHub intelligence explorer featuring real-time user lookup, repository metrics, language breakdowns, and commit activity visualization.
-- **Terminal System & Telemetry**: Interactive command terminal supporting commands (`help`, `skills`, `projects`, `contact`, `clear`) alongside technical capabilities across Full-Stack development, Cloud, and Systems.
-- **Academic Timeline**: B.Tech in Information Technology at Dwarkadas J. Sanghvi College of Engineering (DJSCE), Mumbai (2025 – 2029).
-- **Resume Integration**: In-app PDF quick-preview modal and one-click download access in the Transmission chapter.
+> 🌐 **Live Deployment**: [portfolio-nu-ten-b8bg7s8ws7.vercel.app](https://portfolio-nu-ten-b8bg7s8ws7.vercel.app/)  
+> 🐙 **GitHub Repository**: [github.com/Aryan-Fargose/Portfolio](https://github.com/Aryan-Fargose/Portfolio)  
+> **B.Tech Information Technology (2025 — 2029) · Dwarkadas J. Sanghvi College of Engineering (DJSCE), Mumbai**  
+> An interactive personal portfolio blending systems engineering precision with Anime.js technical aesthetics and Scrollfolio cinematic chapter navigation.
 
 ---
 
-## 🛠️ Tech Stack
+## 🌟 Highlights
 
-- **Core**: HTML5, Canvas 2D API, Vanilla ES Modules JavaScript
-- **Styling**: Vanilla CSS3, Glassmorphism, CSS Custom Properties, Responsive Fluid Grids
-- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Visual Identity (Reference 1)**: Editorial typography, serif italic contrast, deep dark theme (`#080c10`), crisp electric lime (`#d8f36b`) and cyan (`#38bdf8`) accents.
+- **Cinematic Chapter Navigation (Reference 2 — Scrollfolio)**:
+  - 8-chapter progression rail with glowing gradient tracking.
+  - Floating minimal pill navigation with active page indicator.
+  - Top-left Corner HUD system (`01 / 08 CHAPTER`) and top-right live telemetry.
+  - Full mobile bottom dock with prev/next navigation and slide-up chapter sheet drawer.
+- **Anime.js Technical Aesthetics (Reference 3 — Anime.js)**:
+  - Embedded Anime.js v3 animation engine with zero external network dependencies.
+  - Interactive stagger matrix wave demonstration across technical capabilities.
+  - 60fps GPU-accelerated kinetic 3D wireframe constellation canvas that smoothly interpolates with scroll progress and mouse coordinates.
+  - Interactive audio waveform and 24FPS filmstrip micro-interactions.
+- **Complete Personal Content**:
+  - **Education**: DJSCE Mumbai (CGPA: 8.79, MHT-CET: 98.4901 Percentile), St. Rocks Jr. College (HSC PCM), Notre Dame School (CBSE X).
+  - **Selected Projects**:
+    - [CampusHub](https://campus-hub-delta-green.vercel.app/) (Flagship student companion platform)
+    - [GitSearch](https://git-search-rouge.vercel.app/) (Developer telemetry & GitHub inspection tool)
+  - **Certifications**: Python Programming Fundamentals (Microsoft / Coursera · April 2026), CodeChef Beginner Division.
+  - **Life & Athletics**: Music acoustics, cinema visual direction, Cricket, Football, Badminton, Swimming, Endurance Running.
+  - **Full In-App Resume Modal**: Instant access to complete resume without forcing PDF downloads.
+- **Performance & Vercel Optimization**:
+  - Single static HTML document with zero API polling.
+  - Zero continuous network requests during scrolling.
+  - Full mobile responsiveness (tested from 360px up to 1920px+).
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Deployment
 
-### 1. Clone the repository
+The project is pure static HTML/CSS/JS with zero build steps required.
+
+### Local Preview
+Open `index.html` in any modern web browser or run:
 ```bash
-git clone https://github.com/Aryan-Fargose/portfolio.git
-cd portfolio
+npx serve .
 ```
 
-### 2. Install dependencies
-```bash
-npm install
-```
-
-### 3. Run development server
-```bash
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### 4. Build for production
-```bash
-npm run build
-```
-Production assets will be bundled into the `dist/` directory.
-
----
-
-## 📁 Project Structure
-
-```
-Portfolio/
-├── public/
-│   ├── frames/                 # 300 sequential animation frames (frame_001.jpg - frame_300.jpg)
-│   ├── aryan-fargose.jpg       # Personal portrait
-│   └── Aryan_Fargose_Resume.pdf# Academic and professional resume
-├── src/
-│   ├── canvas-renderer.js      # Dual-canvas caching & render loop
-│   ├── scroll-controller.js    # Scroll progress normalization & chapter active states
-│   ├── profile.js              # Interactive terminal emulator & modal controllers
-│   ├── main.js                 # App bootstrap & event coordination
-│   └── style.css               # Glassmorphism, animations, & typography
-├── index.html                  # Semantic structure & story chapters
-├── package.json
-└── vite.config.js
-```
-
----
-
-## 👤 Author
-
-**Aryan Anand Fargose**
-- **Institution**: Dwarkadas J. Sanghvi College of Engineering (DJSCE), Mumbai
-- **Degree**: B.Tech in Information Technology (2025 – 2029)
-- **GitHub**: [@Aryan-Fargose](https://github.com/Aryan-Fargose)
-- **Email**: [fargosearyan@gmail.com](mailto:fargosearyan@gmail.com)
-
----
-
-## 📄 License
-This project is open-source and available under the [MIT License](LICENSE).
+### Deploy to Vercel
+Push this repository to GitHub and import it on Vercel. Vercel will automatically serve it statically with zero configuration.

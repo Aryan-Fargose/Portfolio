@@ -3,112 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Aryan Fargose | IT Engineering Student & Developer Portfolio</title>
-  <meta name="description" content="Cinematic, interactive personal portfolio of Aryan Fargose — IT Engineering Student at DJSCE Mumbai, Builder, and Technology Enthusiast.">
-  <meta name="keywords" content="Aryan Fargose, DJSCE, IT Engineering, CampusHub, GitSearch, Software Developer, Mumbai">
-  
+  <title>Aryan Fargose | IT Engineering Student &amp; Creative Developer Portfolio</title>
+  <meta name="description" content="Cinematic, technical personal portfolio of Aryan Fargose — IT Engineering Student at DJSCE Mumbai, Builder, and Creative Developer.">
+  <meta name="keywords" content="Aryan Fargose, DJSCE, IT Engineering, CampusHub, GitSearch, Software Developer, Mumbai, Web Development, Anime.js, Scrollfolio">
+  <meta name="author" content="Aryan Fargose">
+
   <!-- OpenGraph / Social Meta -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Aryan Fargose | Interactive Developer Portfolio">
-  <meta property="og:description" content="Experience a scroll-controlled 300-frame cinematic hardware exploration and portfolio showcase.">
+  <meta property="og:description" content="Cinematic, interactive portfolio combining precision systems engineering with creative motion and Anime.js technical craft.">
   <meta property="og:url" content="https://github.com/Aryan-Fargose">
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="/src/style.css">
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2338bdf8'><path d='M12 2L2 19h20L12 2zm0 4.5l6.5 11h-13L12 6.5z'/></svg>">
+
+  <!-- Google Fonts Preconnect & Stylesheets (Inter + JetBrains Mono + Playfair Display + Space Grotesk) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,500;1,600&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Loading & Hydration Screen -->
-  <div class="loading-screen" id="loading-screen" role="progressbar" aria-label="Loading Cinematic Experience">
+  <!-- Loading & System Boot Screen -->
+  <div class="loading-screen" id="loading-screen" role="progressbar" aria-label="Initializing Developer Portfolio System">
     <div class="loading-box">
-      <div class="loading-logo-ring"></div>
+      <div class="loading-logo-ring">
+        <span class="loading-inner-core"></span>
+      </div>
       <h1 class="loading-title">ARYAN FARGOSE</h1>
-      <p class="loading-status" id="loading-status">INITIALIZING SYSTEM // 0%</p>
+      <p class="loading-status" id="loading-status">PORTFOLIO · 2026</p>
       <div class="loading-bar-track">
         <div class="loading-bar-fill" id="loading-bar-fill"></div>
       </div>
-      <p class="loading-percent" id="loading-percent">INITIALIZING SEQUENTIAL FRAMES</p>
+      <p class="loading-percent" id="loading-percent">CREATIVE DEVELOPER PORTFOLIO</p>
       <div class="loading-enter-btn" id="loading-enter-btn">
-        <button class="btn-primary" id="btn-start-exploring">SCROLL TO ENGAGE SYSTEM ↓</button>
+        <button class="btn-primary" id="btn-start-exploring" type="button">EXPLORE PORTFOLIO ↓</button>
       </div>
     </div>
   </div>
 
-  <!-- Floating Minimal Top Navigation -->
-  <nav class="floating-nav" id="floating-nav" aria-label="Main Navigation">
-    <a href="#intro" class="brand-mark" data-target="intro" aria-label="Aryan Fargose">
-      <span>AF</span>
-      <em>/ portfolio 2026</em>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#intro" class="nav-link active" data-target="intro">Intro</a></li>
-      <li><a href="#about" class="nav-link" data-target="about">About</a></li>
-      <li><a href="#education" class="nav-link" data-target="education">Education</a></li>
-      <li><a href="#projects" class="nav-link" data-target="projects">Work</a></li>
-      <li><a href="#skills" class="nav-link" data-target="skills">Skills</a></li>
-      <li><a href="#interests" class="nav-link" data-target="interests">Life</a></li>
-      <li><a href="#aspirations" class="nav-link" data-target="aspirations">Next</a></li>
-      <li><a href="#contact" class="nav-link" data-target="contact">Contact</a></li>
-    </ul>
-    <a href="https://www.linkedin.com/in/aryan-fargose-b99330387" target="_blank" rel="noopener noreferrer" class="nav-availability" title="Connect on LinkedIn">
-      <span class="status-dot"></span>
-      <span>COLLABORATE</span>
-    </a>
-  </nav>
+  <!-- Ambient Dark Radial Vignette -->
+  <div class="ambient-overlay" aria-hidden="true"></div>
 
-  <!-- Vertical Chapter Progress Rail (Inspired by Scrollfolio) -->
-  <aside class="chapter-rail" id="chapter-rail" aria-label="Chapter Progression">
-    <div class="rail-line">
-      <span class="rail-line-fill" id="rail-line-fill"></span>
-    </div>
-    <div class="rail-labels">
-      <a href="#intro" class="rail-label-item active" data-target="intro">01 <span>Intro</span></a>
-      <a href="#about" class="rail-label-item" data-target="about">02 <span>About</span></a>
-      <a href="#education" class="rail-label-item" data-target="education">03 <span>Education</span></a>
-      <a href="#projects" class="rail-label-item" data-target="projects">04 <span>Work</span></a>
-      <a href="#skills" class="rail-label-item" data-target="skills">05 <span>Skills</span></a>
-      <a href="#interests" class="rail-label-item" data-target="interests">06 <span>Life</span></a>
-      <a href="#aspirations" class="rail-label-item" data-target="aspirations">07 <span>Next</span></a>
-      <a href="#contact" class="rail-label-item" data-target="contact">08 <span>Contact</span></a>
-    </div>
-  </aside>
-
-  <!-- Corner Chapter Information System (01 / 08 INTRO) -->
-  <aside class="corner-indicator" id="corner-indicator" aria-live="polite">
-    <div class="corner-meta">
-      <span class="corner-number" id="corner-number">01 / 08</span>
-      <span class="corner-badge">CHAPTER</span>
-    </div>
-    <span class="corner-title" id="corner-title">INTRO</span>
-  </aside>
-
-  <!-- Top-Right Live Telemetry -->
-  <div class="corner-telemetry">
-    <div class="telemetry-tag">
-      <span class="telemetry-dot"></span>
-      <span>DJSCE // B.TECH IT (2025-2029)</span>
-    </div>
-    <a href="https://github.com/Aryan-Fargose" target="_blank" rel="noopener noreferrer" class="telemetry-social-link" title="GitHub Profile" aria-label="GitHub Profile">
-      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-    </a>
-    <a href="https://www.linkedin.com/in/aryan-fargose-b99330387" target="_blank" rel="noopener noreferrer" class="telemetry-social-link" title="LinkedIn Profile" aria-label="LinkedIn Profile">
-      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-    </a>
+  <!-- Technical Background Canvas (GPU Composited 60fps Kinetic Canvas) -->
+  <div class="canvas-viewport" aria-hidden="true">
+    <canvas id="animation-canvas"></canvas>
   </div>
+
+  <!-- Unified Responsive Site Header (Never Overlaps Section Content) -->
+  <header class="site-header" id="site-header" role="banner">
+    <div class="site-header-inner">
+      <!-- Left: Brand Mark -->
+      <div class="header-left">
+        <a href="#intro" class="brand-mark" data-target="intro" aria-label="Aryan Fargose - Home">
+          <span class="brand-monogram">AF</span>
+          <span class="brand-text">· 2026</span>
+        </a>
+      </div>
+
+      <!-- Center: Desktop Navigation Bar -->
+      <nav class="header-center-nav" id="floating-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#intro" class="nav-link active" data-target="intro">Intro</a></li>
+          <li><a href="#about" class="nav-link" data-target="about">About</a></li>
+          <li><a href="#education" class="nav-link" data-target="education">Education</a></li>
+          <li><a href="#projects" class="nav-link" data-target="projects">Work</a></li>
+          <li><a href="#skills" class="nav-link" data-target="skills">Skills</a></li>
+          <li><a href="#interests" class="nav-link" data-target="interests">Life</a></li>
+          <li><a href="#aspirations" class="nav-link" data-target="aspirations">Next</a></li>
+          <li><a href="#contact" class="nav-link" data-target="contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right: Telemetry & Actions -->
+      <div class="header-right">
+        <div class="telemetry-tag">
+          <span class="telemetry-label">DJSCE · B.TECH IT</span>
+        </div>
+        <a href="https://github.com/Aryan-Fargose" target="_blank" rel="noopener noreferrer" class="telemetry-social-link" title="GitHub Profile: Aryan-Fargose" aria-label="GitHub Profile">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/aryan-fargose-b99330387" target="_blank" rel="noopener noreferrer" class="telemetry-social-link" title="LinkedIn Profile: Aryan Fargose" aria-label="LinkedIn Profile">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+        </a>
+        <button class="nav-resume-btn" id="btn-nav-resume-view" type="button" title="View Full Resume">RESUME</button>
+        <button class="mobile-header-menu-btn" id="btn-header-drawer-toggle" type="button" aria-label="Open Chapter Selector" aria-expanded="false">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
 
   <!-- Mobile Floating Bottom Chapter Dock -->
   <aside class="mobile-nav-dock" id="mobile-nav-dock" aria-label="Mobile Chapter Navigation">
-    <button class="mobile-nav-arrow" id="btn-mobile-prev" aria-label="Previous Chapter" title="Previous Chapter">
-      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"></path></svg>
+    <button class="mobile-nav-arrow" id="btn-mobile-prev" aria-label="Previous Chapter" title="Previous Chapter" type="button">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
     </button>
-    <button class="mobile-nav-trigger" id="btn-mobile-drawer-toggle" aria-label="Open Chapter Selector" aria-expanded="false">
+    <button class="mobile-nav-trigger" id="btn-mobile-drawer-toggle" aria-label="Open Chapter Selector" aria-expanded="false" type="button">
       <span class="mobile-nav-num" id="mobile-nav-num">01 / 08</span>
       <span class="mobile-nav-title" id="mobile-nav-title">INTRO</span>
-      <svg class="mobile-nav-caret" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+      <svg class="mobile-nav-caret" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
     </button>
-    <button class="mobile-nav-arrow" id="btn-mobile-next" aria-label="Next Chapter" title="Next Chapter">
-      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg>
+    <button class="mobile-nav-arrow" id="btn-mobile-next" aria-label="Next Chapter" title="Next Chapter" type="button">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
     </button>
   </aside>
 
@@ -118,85 +118,71 @@
       <div class="mobile-drawer-handle"></div>
       <div class="mobile-drawer-header">
         <span class="mobile-drawer-title">CHAPTER INDEX</span>
-        <button class="mobile-drawer-close" id="btn-mobile-drawer-close" aria-label="Close Chapter Index">✕</button>
+        <button class="mobile-drawer-close" id="btn-mobile-drawer-close" aria-label="Close Chapter Index" type="button">✕</button>
       </div>
       <div class="mobile-drawer-links">
-        <button class="mobile-drawer-item active" data-target="intro">
+        <button class="mobile-drawer-item active" data-target="intro" type="button">
           <span class="drawer-item-num">01</span>
           <div class="drawer-item-text">
             <span class="drawer-item-label">Intro</span>
-            <span class="drawer-item-desc">System Start & Monumental Profile</span>
+            <span class="drawer-item-desc">System Start &amp; Monumental Profile</span>
           </div>
         </button>
-        <button class="mobile-drawer-item" data-target="about">
+        <button class="mobile-drawer-item" data-target="about" type="button">
           <span class="drawer-item-num">02</span>
           <div class="drawer-item-text">
             <span class="drawer-item-label">About</span>
-            <span class="drawer-item-desc">Engineering Foundations & Values</span>
+            <span class="drawer-item-desc">Engineering Foundations &amp; Values</span>
           </div>
         </button>
-        <button class="mobile-drawer-item" data-target="education">
+        <button class="mobile-drawer-item" data-target="education" type="button">
           <span class="drawer-item-num">03</span>
           <div class="drawer-item-text">
             <span class="drawer-item-label">Education</span>
             <span class="drawer-item-desc">DJSCE Mumbai (B.Tech IT · CGPA 8.79)</span>
           </div>
         </button>
-        <button class="mobile-drawer-item" data-target="projects">
+        <button class="mobile-drawer-item" data-target="projects" type="button">
           <span class="drawer-item-num">04</span>
           <div class="drawer-item-text">
             <span class="drawer-item-label">Work</span>
-            <span class="drawer-item-desc">CampusHub & GitSearch</span>
+            <span class="drawer-item-desc">CampusHub &amp; GitSearch</span>
           </div>
         </button>
-        <button class="mobile-drawer-item" data-target="skills">
+        <button class="mobile-drawer-item" data-target="skills" type="button">
           <span class="drawer-item-num">05</span>
           <div class="drawer-item-text">
-            <span class="drawer-item-label">Skills & Hardware</span>
-            <span class="drawer-item-desc">Full Stack, Canvas & System HUD</span>
+            <span class="drawer-item-label">Skills &amp; Hardware</span>
+            <span class="drawer-item-desc">Full Stack, Canvas &amp; System HUD</span>
           </div>
         </button>
-        <button class="mobile-drawer-item" data-target="interests">
+        <button class="mobile-drawer-item" data-target="interests" type="button">
           <span class="drawer-item-num">06</span>
           <div class="drawer-item-text">
-            <span class="drawer-item-label">Life & Cinema</span>
-            <span class="drawer-item-desc">Acoustics, Visual Craft & Sports</span>
+            <span class="drawer-item-label">Life &amp; Cinema</span>
+            <span class="drawer-item-desc">Acoustics, Visual Craft &amp; Athletics</span>
           </div>
         </button>
-        <button class="mobile-drawer-item" data-target="aspirations">
+        <button class="mobile-drawer-item" data-target="aspirations" type="button">
           <span class="drawer-item-num">07</span>
           <div class="drawer-item-text">
             <span class="drawer-item-label">Next</span>
-            <span class="drawer-item-desc">Engineering for Impact & Growth</span>
+            <span class="drawer-item-desc">Engineering for Impact &amp; Growth</span>
           </div>
         </button>
-        <button class="mobile-drawer-item" data-target="contact">
+        <button class="mobile-drawer-item" data-target="contact" type="button">
           <span class="drawer-item-num">08</span>
           <div class="drawer-item-text">
             <span class="drawer-item-label">Contact</span>
-            <span class="drawer-item-desc">Direct Lines, Resume & Inquiries</span>
+            <span class="drawer-item-desc">Direct Lines, Resume &amp; Inquiries</span>
           </div>
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Fixed High-Performance Animation Canvas -->
-  <div class="canvas-viewport" aria-hidden="true">
-    <canvas id="animation-canvas"></canvas>
-  </div>
-
-  <!-- Ambient Dark Vignette Filter -->
-  <div class="ambient-overlay" aria-hidden="true"></div>
-
-  <!-- IDEA CORE Glowing Badge -->
-  <div class="idea-core-highlight" id="idea-core-highlight" aria-hidden="true">
-    <span class="core-spark"></span>
-    <span class="core-text">IDEA CORE ACTIVE</span>
-    <span class="core-flow">IDEA → CODE → DESIGN → BUILD → SHIP</span>
-  </div>
-
-  <!-- Chapter Overlays Layer -->
+  <!-- IDEA CORE Badge -->
+  <!-- Main Viewport Layers for Chapters -->
   <main class="chapter-viewport">
 
     <!-- 01: INTRO / HERO -->
@@ -205,35 +191,49 @@
         <!-- Aryan Fargose Verified Portrait Badge -->
         <div class="hero-portrait-wrap">
           <div class="hero-portrait-frame">
-            <img src="/aryan-fargose.jpg" alt="Aryan Fargose" class="hero-portrait-img" loading="eager" fetchpriority="high" />
+            <img 
+              src="https://portfolio-nu-ten-b8bg7s8ws7.vercel.app/aryan-fargose.jpg" 
+              onerror="this.onerror=null; this.src='avatar.svg';" 
+              alt="Aryan Fargose - Developer Portrait" 
+              class="hero-portrait-img" 
+              loading="eager" 
+              fetchpriority="high"
+            >
           </div>
           <div class="hero-portrait-badge">
-            <span class="status-dot"></span>
-            <span>ARYAN FARGOSE // DJSCE IT</span>
+            <span>ARYAN FARGOSE · DJSCE IT</span>
           </div>
         </div>
 
-        <p class="kicker">
-          <span class="kicker-rule"></span>
-          <span>INDEPENDENT DEVELOPER // SYSTEMS & INTERFACES</span>
-        </p>
-
         <h1 class="hero-title">
-          <span class="hero-name-big">ARYAN FARGOSE</span>
-          <span class="hero-title-sub">Building digital <i>systems</i> with intent.</span>
+          <span class="hero-name-big"><span id="typed-hero-name"></span><span class="hero-cursor" id="hero-cursor">|</span></span>
         </h1>
 
+        <p class="hero-typed-role" id="typed-hero-role"></p>
+
         <p class="hero-subtitle">B.Tech Information Technology (2025 — 2029) · Dwarkadas J. Sanghvi College of Engineering</p>
+
         <div class="hero-pills">
-          <span class="hero-pill">REACT & VITE</span>
-          <span class="hero-pill">SYSTEMS & ARCHITECTURE</span>
+          <span class="hero-pill">REACT &amp; VITE</span>
+          <span class="hero-pill">SYSTEMS &amp; ARCHITECTURE</span>
           <span class="hero-pill">JAVA · PYTHON · C · TS</span>
-          <span class="hero-pill">CREATIVE CODING</span>
+          <span class="hero-pill">ANIME.JS &amp; CREATIVE CODING</span>
         </div>
 
-        <div class="hero-scroll-prompt" id="hero-scroll-prompt">
+        <div class="hero-actions">
+          <button class="btn-hero-resume" id="btn-hero-view-resume" type="button">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+            <span>QUICK VIEW RESUME</span>
+          </button>
+          <a href="https://portfolio-nu-ten-b8bg7s8ws7.vercel.app/Aryan_Fargose_Resume.pdf" download="Aryan_Fargose_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-hero-download" title="Download Official Resume PDF">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            <span>DOWNLOAD RESUME (PDF)</span>
+          </a>
+        </div>
+
+        <div class="hero-scroll-prompt" id="hero-scroll-prompt" role="button" tabindex="0" aria-label="Scroll to explore About section">
           <span>SCROLL TO EXPLORE</span>
-          <svg class="scroll-arrow-anim" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+          <svg class="scroll-arrow-anim" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
         </div>
       </div>
     </section>
@@ -242,16 +242,12 @@
     <section class="chapter-panel" id="panel-about" aria-label="About Section">
       <div class="panel-grid-side">
         <div class="glass-card panel-content-left">
-          <p class="kicker">
-            <span class="kicker-rule"></span>
-            <span>02 // ABOUT</span>
-          </p>
           <h2 class="section-heading">Good work lives<br><i>between</i> logic and feeling.</h2>
           <p class="section-description">
             I am an Information Technology engineering student (2025 — 2029) at <strong>Dwarkadas J. Sanghvi College of Engineering (DJSCE)</strong>, Mumbai.
           </p>
           <p class="section-description">
-            With a solid engineering foundation in C, Java, Python, JavaScript, and TypeScript, I build thoughtful interfaces and useful software. Outside code, my rhythm is anchored in cricket, football, endurance running, music, and dissecting cinematic framing in film.
+            With a solid engineering foundation in C, Java, Python, JavaScript, and TypeScript, I build thoughtful interfaces and useful software. Outside code, my rhythm is anchored in cricket, football, endurance running, music, and dissecting cinematographic framing in film.
           </p>
           <div class="about-meta-grid">
             <div class="about-meta-item">
@@ -264,7 +260,7 @@
             </div>
             <div class="about-meta-item">
               <span class="meta-label">CORE FOCUS</span>
-              <span class="meta-val">Full-Stack & Systems</span>
+              <span class="meta-val">Full-Stack &amp; Systems</span>
             </div>
             <div class="about-meta-item">
               <span class="meta-label">AVAILABILITY</span>
@@ -272,45 +268,134 @@
             </div>
           </div>
         </div>
-        <div><!-- Left side has card; center canvas shows rotating laptop --></div>
+
+        <!-- Right Side: Anime.js Interactive Telemetry Readout Widget -->
+        <div class="glass-card panel-content-right technical-spec-box">
+          <div class="spec-header">
+            <span class="spec-badge">ENGINEERING MANIFESTO</span>
+            <span class="spec-id">BUILD_ENV · PRODUCTION</span>
+          </div>
+          <div class="spec-list">
+            <div class="spec-row">
+              <span class="spec-key">PHILOSOPHY</span>
+              <span class="spec-val">Clean Architecture &amp; Zero Bloat</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">WORKSTATION</span>
+              <span class="spec-val">VS Code · Git · Node · Linux CLI</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">OPTIMIZATION</span>
+              <span class="spec-val">GPU Composition · rAF · 0 Layout Shifts</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">DISCIPLINE</span>
+              <span class="spec-val">Algorithmic Rigor + Cinematic Polish</span>
+            </div>
+          </div>
+          <div class="anime-playground-mini">
+            <div class="mini-hud-pulse">
+              <span class="pulse-label">PRODUCTION METRICS</span>
+            </div>
+            <div class="mini-bar-group">
+              <div class="mini-bar-row">
+                <span>SYSTEM FLUIDITY</span>
+                <div class="mini-track"><div class="mini-fill" style="width: 98%;"></div></div>
+                <span>98%</span>
+              </div>
+              <div class="mini-bar-row">
+                <span>GRAPHICS FIDELITY</span>
+                <div class="mini-track"><div class="mini-fill" style="width: 95%;"></div></div>
+                <span>95%</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- 03: EDUCATION -->
     <section class="chapter-panel" id="panel-education" aria-label="Education Section">
       <div class="panel-grid-side">
-        <div><!-- Space for 3D rotated laptop --></div>
+        <!-- Left Side: Interactive Academic Milestone Telemetry -->
+        <div class="glass-card panel-content-left academic-stats-card">
+          <div class="metric-score-display">
+            <div class="metric-tile metric-lime">
+              <span class="metric-label">CURRENT CGPA</span>
+              <span class="metric-big">8.79</span>
+              <span class="metric-sub">DJSCE MUMBAI (B.TECH IT)</span>
+            </div>
+            <div class="metric-tile metric-cyan">
+              <span class="metric-label">MHT-CET 2025</span>
+              <span class="metric-big">98.4901</span>
+              <span class="metric-sub">PERCENTILE RANK (STATEWIDE)</span>
+            </div>
+          </div>
+          <div class="academic-graph-wrap">
+            <div class="graph-header">
+              <span>CORE SYSTEM DISCIPLINES</span>
+              <span class="graph-tag">FOUNDATIONAL</span>
+            </div>
+            <div class="discipline-meter-list">
+              <div class="meter-item">
+                <div class="meter-top"><span>Data Structures &amp; Algorithms</span><span>CodeChef Beginner</span></div>
+                <div class="meter-track"><div class="meter-fill" style="width: 90%;"></div></div>
+              </div>
+              <div class="meter-item">
+                <div class="meter-top"><span>Object-Oriented Programming (Java/Python)</span><span>Core</span></div>
+                <div class="meter-track"><div class="meter-fill" style="width: 92%;"></div></div>
+              </div>
+              <div class="meter-item">
+                <div class="meter-top"><span>Database Management Systems (DBMS)</span><span>Relational</span></div>
+                <div class="meter-track"><div class="meter-fill" style="width: 86%;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Educational Progression -->
         <div class="glass-card panel-content-right">
-          <p class="kicker">
-            <span class="kicker-rule"></span>
-            <span>03 // EDUCATION</span>
-          </p>
-          <h2 class="section-heading">Academic <i>foundations</i> & systems study.</h2>
+          <h2 class="section-heading">Academic <i>foundations</i> &amp; systems study.</h2>
           <div class="edu-timeline">
-            <div class="edu-badge">2025 — 2029 (B.TECH IT)</div>
-            <h3 style="font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 4px; font-weight: 700;">Bachelor of Technology in Information Technology</h3>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 10px;">Dwarkadas J. Sanghvi College of Engineering (DJSCE), Mumbai</p>
-            <div class="course-tags" style="margin-bottom: 14px;">
-              <span class="course-tag" style="background: rgba(216, 243, 107, 0.15); color: var(--accent-lime); border-color: rgba(216, 243, 107, 0.3); font-weight: 600;">CGPA: 8.79</span>
-              <span class="course-tag" style="background: rgba(56, 189, 248, 0.15); color: var(--accent-cyan); border-color: rgba(56, 189, 248, 0.3); font-weight: 600;">MHT-CET: 98.4901 Percentile</span>
-            </div>
-            <p class="section-description" style="margin-bottom: 8px;">
-              Prior Milestones:
-            </p>
-            <div style="font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-mono); margin-bottom: 14px; display: flex; flex-direction: column; gap: 4px;">
-              <span>• HSC (PCM): St. Rocks Jr. College, Mumbai (2023–2025)</span>
-              <span>• CBSE Class X: Notre Dame School, Mumbai (2023)</span>
-            </div>
-            <span class="section-label" style="font-size: 0.68rem; margin-bottom: 6px;">KEY DISCIPLINES</span>
-            <div class="course-tags" style="margin-bottom: 16px;">
-              <span class="course-tag">Data Structures & Algorithms</span>
-              <span class="course-tag">Object-Oriented Programming</span>
-              <span class="course-tag">Database Management (DBMS)</span>
-              <span class="course-tag">Computer Networks</span>
-              <span class="course-tag">Operating Systems</span>
-              <span class="course-tag">Web Technologies</span>
+            <div class="edu-item active-edu">
+              <div class="edu-badge">2025 — 2029 (B.TECH IT)</div>
+              <h3 class="edu-title">Bachelor of Technology in Information Technology</h3>
+              <p class="edu-institution">Dwarkadas J. Sanghvi College of Engineering (DJSCE), Mumbai</p>
+              <div class="course-tags">
+                <span class="course-tag tag-lime">CGPA: 8.79</span>
+                <span class="course-tag tag-cyan">MHT-CET: 98.4901 Percentile</span>
+              </div>
             </div>
 
+            <div class="edu-item">
+              <p class="section-label" style="font-size: 0.68rem; margin-top: 14px; margin-bottom: 6px;">PRIOR MILESTONES</p>
+              <div class="prior-milestones-list">
+                <div class="prior-row">
+                  <span class="milestone-bullet">•</span>
+                  <div>
+                    <strong>HSC (PCM):</strong> St. Rocks Jr. College, Mumbai <span class="milestone-year">(2023–2025)</span>
+                  </div>
+                </div>
+                <div class="prior-row">
+                  <span class="milestone-bullet">•</span>
+                  <div>
+                    <strong>CBSE Class X:</strong> Notre Dame School, Mumbai <span class="milestone-year">(2023)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="edu-item">
+              <span class="section-label" style="font-size: 0.68rem; margin-bottom: 6px;">KEY DISCIPLINES</span>
+              <div class="course-tags">
+                <span class="course-tag">Data Structures &amp; Algorithms</span>
+                <span class="course-tag">Object-Oriented Programming</span>
+                <span class="course-tag">Database Management (DBMS)</span>
+                <span class="course-tag">Computer Networks</span>
+                <span class="course-tag">Operating Systems</span>
+                <span class="course-tag">Web Technologies</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -319,26 +404,27 @@
     <!-- 04: PROJECTS -->
     <section class="chapter-panel" id="panel-projects" aria-label="Projects Section">
       <div style="text-align: center; margin-bottom: 24px;">
-        <p class="kicker" style="justify-content: center;">
-          <span class="kicker-rule"></span>
-          <span>04 // SELECTED WORK</span>
-        </p>
         <h2 class="section-heading">A few things<br><i>in motion.</i></h2>
       </div>
+
+      <!-- Mobile Project Tabs -->
       <div class="mobile-project-tabs" id="mobile-project-tabs" role="tablist" aria-label="Select Project">
-        <button class="mobile-proj-tab active" data-proj-target="campushub" role="tab" aria-selected="true">01 CAMPUSHUB</button>
-        <button class="mobile-proj-tab" data-proj-target="gitsearch" role="tab" aria-selected="false">02 GITSEARCH</button>
+        <button class="mobile-proj-tab active" data-proj-target="campushub" role="tab" aria-selected="true" type="button">01 CAMPUSHUB</button>
+        <button class="mobile-proj-tab" data-proj-target="gitsearch" role="tab" aria-selected="false" type="button">02 GITSEARCH</button>
       </div>
+
       <div class="projects-deck">
         <!-- Project 1: CampusHub (Flagship) -->
         <article class="project-card featured active" data-proj-card="campushub">
           <div>
             <div class="project-visual project-visual-1">
-              <span class="project-visual-num">01 / PLATFORM</span>
+              <span class="project-visual-num">01 · PLATFORM</span>
               <div class="visual-orbit"></div>
+              <div class="visual-orbit-inner"></div>
+              <span class="visual-telemetry-tag">ECOSYSTEM · v1.0</span>
             </div>
             <div class="project-header">
-              <span class="project-type">COMMUNITY PLATFORM & CAMPUS HUB</span>
+              <span class="project-type">COMMUNITY PLATFORM &amp; CAMPUS HUB</span>
               <span class="project-status">ACTIVE BUILD</span>
             </div>
             <h3 class="project-title">CAMPUSHUB</h3>
@@ -369,11 +455,13 @@
         <article class="project-card" data-proj-card="gitsearch">
           <div>
             <div class="project-visual project-visual-2">
-              <span class="project-visual-num">02 / TOOLING</span>
+              <span class="project-visual-num">02 · TOOLING</span>
               <div class="visual-orbit visual-orbit-2"></div>
+              <div class="visual-orbit-inner visual-orbit-inner-2"></div>
+              <span class="visual-telemetry-tag">REST API SPEED</span>
             </div>
             <div class="project-header">
-              <span class="project-type">DEVELOPER TOOLING & GITHUB SEARCH</span>
+              <span class="project-type">DEVELOPER TOOLING &amp; GITHUB SEARCH</span>
               <span class="project-status completed">PRODUCTION</span>
             </div>
             <h3 class="project-title">GITSEARCH</h3>
@@ -402,125 +490,132 @@
       </div>
     </section>
 
-    <!-- 05: SKILLS & EXPLODED HARDWARE HUD -->
+    <!-- 05: SKILLS & HARDWARE HUD (Anime.js Playground) -->
     <section class="chapter-panel" id="panel-skills" aria-label="Skills and Hardware Section">
       <div class="mobile-skills-tabs" id="mobile-skills-tabs" role="tablist" aria-label="Select Capabilities View">
-        <button class="mobile-skill-tab active" data-skill-target="matrix" role="tab" aria-selected="true">TECH CAPABILITIES</button>
-        <button class="mobile-skill-tab" data-skill-target="hardware" role="tab" aria-selected="false">HARDWARE HUD</button>
+        <button class="mobile-skill-tab active" data-skill-target="matrix" role="tab" aria-selected="true" type="button">TECH CAPABILITIES</button>
+        <button class="mobile-skill-tab" data-skill-target="hardware" role="tab" aria-selected="false" type="button">HARDWARE HUD</button>
       </div>
+
       <div class="skills-layout">
+        <!-- Skills Matrix Column with Anime.js Interactive Demonstration -->
         <div class="skills-matrix-col active" id="skills-matrix-col">
-          <p class="kicker">
-            <span class="kicker-rule"></span>
-            <span>05 // CAPABILITIES</span>
-          </p>
-          <h2 class="section-heading">From blank canvas<br>to <i>shipped.</i></h2>
+          <div class="skills-heading-row">
+            <div>
+              <h2 class="section-heading">From blank canvas<br>to <i>shipped.</i></h2>
+            </div>
+          </div>
+
           <p class="section-description" style="margin-bottom: 20px;">
-            A verified inventory of programming languages, architectures, web technologies, and performance optimization tools.
+            A verified inventory of programming languages, architectures, web technologies, and performance optimization tools. Click tags to interact.
           </p>
+
           <div class="skills-matrix">
-            <div class="skill-cat-card">
+            <div class="skill-cat-card" data-cat="programming">
               <span class="cat-title">
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
                 PROGRAMMING
               </span>
               <div class="cat-skills">
-                <span class="cat-skill-tag">C</span>
-                <span class="cat-skill-tag">Java</span>
-                <span class="cat-skill-tag">Python</span>
-                <span class="cat-skill-tag">JavaScript (ES6+)</span>
-                <span class="cat-skill-tag">TypeScript</span>
+                <span class="cat-skill-tag" data-tech="c">C</span>
+                <span class="cat-skill-tag" data-tech="java">Java</span>
+                <span class="cat-skill-tag" data-tech="python">Python</span>
+                <span class="cat-skill-tag" data-tech="js">JavaScript (ES6+)</span>
+                <span class="cat-skill-tag" data-tech="ts">TypeScript</span>
               </div>
             </div>
-            <div class="skill-cat-card">
+
+            <div class="skill-cat-card" data-cat="web">
               <span class="cat-title">
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"></path></svg>
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/></svg>
                 WEB DEVELOPMENT
               </span>
               <div class="cat-skills">
-                <span class="cat-skill-tag">HTML5</span>
-                <span class="cat-skill-tag">Modern CSS</span>
-                <span class="cat-skill-tag">React</span>
-                <span class="cat-skill-tag">Vite</span>
-                <span class="cat-skill-tag">REST APIs</span>
+                <span class="cat-skill-tag" data-tech="html">HTML5</span>
+                <span class="cat-skill-tag" data-tech="css">Modern CSS</span>
+                <span class="cat-skill-tag" data-tech="react">React</span>
+                <span class="cat-skill-tag" data-tech="vite">Vite</span>
+                <span class="cat-skill-tag" data-tech="rest">REST APIs</span>
               </div>
             </div>
-            <div class="skill-cat-card">
+
+            <div class="skill-cat-card" data-cat="tools">
               <span class="cat-title">
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"></path></svg>
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
                 DEVELOPER TOOLS
               </span>
               <div class="cat-skills">
-                <span class="cat-skill-tag">Git</span>
-                <span class="cat-skill-tag">GitHub</span>
-                <span class="cat-skill-tag">VS Code</span>
-                <span class="cat-skill-tag">Node / npm</span>
-                <span class="cat-skill-tag">CLI</span>
+                <span class="cat-skill-tag" data-tech="git">Git</span>
+                <span class="cat-skill-tag" data-tech="github">GitHub</span>
+                <span class="cat-skill-tag" data-tech="vscode">VS Code</span>
+                <span class="cat-skill-tag" data-tech="node">Node / npm</span>
+                <span class="cat-skill-tag" data-tech="cli">CLI</span>
               </div>
             </div>
-            <div class="skill-cat-card">
+
+            <div class="skill-cat-card" data-cat="motion">
               <span class="cat-title">
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                GRAPHICS & MOTION
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                GRAPHICS &amp; MOTION
               </span>
               <div class="cat-skills">
-                <span class="cat-skill-tag">Canvas API</span>
-                <span class="cat-skill-tag">Frame Sequences</span>
-                <span class="cat-skill-tag">rAF Optimization</span>
-                <span class="cat-skill-tag">Anime.js</span>
+                <span class="cat-skill-tag" data-tech="canvas">Canvas API</span>
+                <span class="cat-skill-tag" data-tech="raf">rAF Optimization</span>
+                <span class="cat-skill-tag" data-tech="anime">Anime.js</span>
+                <span class="cat-skill-tag" data-tech="svg">SVG Vector Paths</span>
               </div>
             </div>
           </div>
 
           <!-- Verified Certifications from Resume -->
-          <div style="margin-top: 16px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(216, 243, 107, 0.25); border-radius: 12px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+          <div class="certification-badge-bar">
             <div style="display: flex; align-items: center; gap: 8px;">
-              <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--accent-lime); background: rgba(216, 243, 107, 0.15); padding: 2px 6px; border-radius: 4px; font-weight: 700;">CERTIFIED</span>
-              <span style="font-size: 0.8rem; font-weight: 600; color: #fff;">Python Programming Fundamentals (Microsoft / Coursera · April 2026)</span>
+              <span class="cert-pill">CERTIFIED</span>
+              <span class="cert-text">Python Programming Fundamentals (Microsoft / Coursera · April 2026)</span>
             </div>
-            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-cyan);">CodeChef Beginner Div</span>
+            <span class="cert-sub">CodeChef Beginner Div</span>
           </div>
         </div>
 
         <!-- Hardware Metaphors HUD Column -->
         <div class="hardware-hud-col" id="hardware-hud-col">
-          <div class="hardware-hud" id="hardware-hud" aria-label="Component Metaphors">
-            <div class="hud-item">
+          <div class="hardware-hud visible" id="hardware-hud" aria-label="Component Metaphors">
+            <div class="hud-item" data-component="cpu">
               <div class="hud-left">
                 <span class="hud-chip">CPU</span>
-                <span class="hud-metaphor">Problem Solving & Logic</span>
+                <span class="hud-metaphor">Problem Solving &amp; Logic</span>
               </div>
               <span class="hud-metric">Algorithmic Rigor</span>
             </div>
-            <div class="hud-item">
+            <div class="hud-item" data-component="gpu">
               <div class="hud-left">
                 <span class="hud-chip">GPU</span>
-                <span class="hud-metaphor">Creativity & Visual Computing</span>
+                <span class="hud-metaphor">Creativity &amp; Visual Computing</span>
               </div>
               <span class="hud-metric">Pixel Precision</span>
             </div>
-            <div class="hud-item">
+            <div class="hud-item" data-component="ram">
               <div class="hud-left">
                 <span class="hud-chip">RAM</span>
                 <span class="hud-metaphor">High-Bandwidth Multitasking</span>
               </div>
               <span class="hud-metric">Dynamic Flow</span>
             </div>
-            <div class="hud-item">
+            <div class="hud-item" data-component="ssd">
               <div class="hud-left">
                 <span class="hud-chip">SSD</span>
-                <span class="hud-metaphor">Projects & Knowledge</span>
+                <span class="hud-metaphor">Projects &amp; Knowledge</span>
               </div>
               <span class="hud-metric">Persistent Storage</span>
             </div>
-            <div class="hud-item">
+            <div class="hud-item" data-component="board">
               <div class="hud-left">
                 <span class="hud-chip">BOARD</span>
                 <span class="hud-metaphor">Interconnected Architecture</span>
               </div>
               <span class="hud-metric">System Synergy</span>
             </div>
-            <div class="hud-item">
+            <div class="hud-item" data-component="fans">
               <div class="hud-left">
                 <span class="hud-chip">FANS</span>
                 <span class="hud-metaphor">Composed Under Pressure</span>
@@ -535,28 +630,26 @@
     <!-- 06: INTERESTS, MUSIC & CINEMA -->
     <section class="chapter-panel" id="panel-interests" aria-label="Interests and Personality Section">
       <div class="panel-content-center">
-        <p class="kicker" style="justify-content: center;">
-          <span class="kicker-rule"></span>
-          <span>06 // OFF THE CLOCK</span>
-        </p>
-        <h2 class="section-heading">Off the <i>clock</i> & in rhythm.</h2>
+        <h2 class="section-heading">Off the <i>clock</i> &amp; in rhythm.</h2>
         <p class="section-description" style="max-width: 650px; margin: 0 auto 28px;">
           The disciplines and creative habits that sharpen tactical reflexes, stamina, and visual intuition.
         </p>
 
         <div class="interests-grid">
-          <!-- Music Card -->
-          <div class="interest-card special-music">
+          <!-- Music Card with Interactive Animated Waveform -->
+          <div class="interest-card special-music" id="card-interest-music">
             <div class="life-icon">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13M9 18a3 3 0 11-6 0 3 3 0 016 0zm12 0a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13M9 18a3 3 0 11-6 0 3 3 0 016 0zm12 0a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             </div>
-            <span class="interest-badge">ACOUSTICS & FLOW</span>
+            <span class="interest-badge">ACOUSTICS &amp; FLOW</span>
             <h3 class="interest-title">MUSIC</h3>
             <p class="interest-tagline">Deep Focus Soundtracks</p>
             <p class="interest-desc">
               Ambient soundscapes, atmospheric electronica, and rhythmic pulses that unlock sustained flow states during complex engineering sessions.
             </p>
-            <div class="waveform-visualizer" aria-hidden="true">
+            <div class="waveform-visualizer" aria-hidden="true" id="waveform-visualizer">
+              <div class="waveform-bar"></div>
+              <div class="waveform-bar"></div>
               <div class="waveform-bar"></div>
               <div class="waveform-bar"></div>
               <div class="waveform-bar"></div>
@@ -566,36 +659,42 @@
             </div>
           </div>
 
-          <!-- Cinema Card -->
-          <div class="interest-card special-cinema">
+          <!-- Cinema Card with Interactive Animated Filmstrip -->
+          <div class="interest-card special-cinema" id="card-interest-cinema">
             <div class="life-icon">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"></path></svg>
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg>
             </div>
             <span class="interest-badge">VISUAL DIRECTION</span>
             <h3 class="interest-title">CINEMA</h3>
-            <p class="interest-tagline">Framing, Lighting & Pacing</p>
+            <p class="interest-tagline">Framing, Lighting &amp; Pacing</p>
             <p class="interest-desc">
               Analyzing cinematographic lighting, rhythm, pacing, and visual composition — infusing film-grade craft into digital interfaces.
             </p>
-            <div class="filmstrip-visualizer" aria-hidden="true">
-              <div class="filmstrip-frame"></div>
-              <div class="filmstrip-frame"></div>
-              <div class="filmstrip-frame"></div>
-              <div class="filmstrip-frame"></div>
+            <div class="filmstrip-visualizer" aria-hidden="true" id="filmstrip-visualizer">
+              <div class="filmstrip-frame"><span>24FPS</span></div>
+              <div class="filmstrip-frame"><span>4K</span></div>
+              <div class="filmstrip-frame"><span>LOG</span></div>
+              <div class="filmstrip-frame"><span>ISO</span></div>
             </div>
           </div>
 
           <!-- Sports & Fitness Card -->
-          <div class="interest-card">
+          <div class="interest-card" id="card-interest-sports">
             <div class="life-icon">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
             </div>
-            <span class="interest-badge">STRATEGY & ENDURANCE</span>
-            <h3 class="interest-title">SPORTS & RUNNING</h3>
+            <span class="interest-badge">STRATEGY &amp; ENDURANCE</span>
+            <h3 class="interest-title">SPORTS &amp; RUNNING</h3>
             <p class="interest-tagline">Cricket · Football · Fitness</p>
             <p class="interest-desc">
               Cricket teaches tactical patience and team harmony; football builds spatial pace; running instills the physical stamina needed for relentless engineering.
             </p>
+            <div class="athletics-tags-row">
+              <span class="athletic-pill">CRICKET</span>
+              <span class="athletic-pill">FOOTBALL</span>
+              <span class="athletic-pill">BADMINTON</span>
+              <span class="athletic-pill">SWIMMING</span>
+            </div>
           </div>
         </div>
       </div>
@@ -604,10 +703,6 @@
     <!-- 07: WHAT'S NEXT / ASPIRATIONS -->
     <section class="chapter-panel" id="panel-aspirations" aria-label="Aspirations Section">
       <div class="panel-content-center">
-        <p class="kicker" style="justify-content: center;">
-          <span class="kicker-rule"></span>
-          <span>07 // FUTURE HORIZONS</span>
-        </p>
         <h2 class="section-heading">Constantly pushing <i>horizons.</i></h2>
         <p class="section-description" style="max-width: 600px; margin: 0 auto;">
           Continuously pushing personal benchmarks, mastering distributed software, and building tools that make a real difference.
@@ -637,10 +732,6 @@
     <!-- 08: CONTACT / CLOSING -->
     <section class="chapter-panel" id="panel-contact" aria-label="Contact Section">
       <div class="contact-container">
-        <p class="kicker" style="justify-content: center;">
-          <span class="kicker-rule"></span>
-          <span>08 // TRANSMISSION</span>
-        </p>
         <h2 class="contact-heading">
           <span>Have a good<br><i>idea?</i> Let's build.</span>
         </h2>
@@ -649,43 +740,54 @@
         </p>
 
         <div class="contact-channels">
-          <a href="/Aryan_Fargose_Resume.pdf" download="Aryan_Fargose_Resume.pdf" class="channel-card highlight-resume" title="Download Official Resume (PDF)">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+          <!-- Resume PDF Download -->
+          <a href="https://portfolio-nu-ten-b8bg7s8ws7.vercel.app/Aryan_Fargose_Resume.pdf" download="Aryan_Fargose_Resume.pdf" target="_blank" rel="noopener noreferrer" class="channel-card highlight-resume" title="Download Official Resume (PDF)">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
             <span>Resume (PDF) ↓</span>
           </a>
-          <button class="channel-card highlight-view-resume" id="btn-open-resume-modal" title="View Full Interactive Resume">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+
+          <!-- Quick View Resume Modal -->
+          <button class="channel-card highlight-view-resume" id="btn-open-resume-modal" title="View Full Interactive Resume" type="button">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
             <span>Quick View Resume</span>
           </button>
-          <a href="https://github.com/Aryan-Fargose" target="_blank" rel="noopener noreferrer" class="channel-card">
+
+          <!-- GitHub Profile -->
+          <a href="https://github.com/Aryan-Fargose" target="_blank" rel="noopener noreferrer" class="channel-card" title="GitHub: Aryan-Fargose">
             <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            <span>GitHub / Aryan-Fargose</span>
+            <span>GitHub · Aryan-Fargose</span>
           </a>
-          <a href="https://www.linkedin.com/in/aryan-fargose-b99330387" target="_blank" rel="noopener noreferrer" class="channel-card">
+
+          <!-- LinkedIn Profile -->
+          <a href="https://www.linkedin.com/in/aryan-fargose-b99330387" target="_blank" rel="noopener noreferrer" class="channel-card" title="LinkedIn: aryan-fargose">
             <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-            <span>LinkedIn / aryan-fargose</span>
+            <span>LinkedIn · aryan-fargose</span>
           </a>
-          <a href="mailto:aryanfargose@gmail.com" class="channel-card">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+
+          <!-- Email Direct -->
+          <a href="mailto:aryanfargose@gmail.com" class="channel-card" title="Send Email">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             <span>aryanfargose@gmail.com</span>
           </a>
+
+          <!-- Phone Direct -->
           <a href="tel:+918369894256" class="channel-card" title="Call Aryan">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
             <span>+91 83698 94256</span>
           </a>
-          <button class="copy-email-btn" id="btn-copy-email" title="Copy Email Address">
-            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+
+          <!-- Copy Email Button with Animated Tooltip -->
+          <button class="copy-email-btn" id="btn-copy-email" title="Copy Email to Clipboard" type="button">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
             <span id="copy-email-text">Copy Email</span>
           </button>
         </div>
-
-        <p class="contact-footer-motto">BUILD • LEARN • EXPLORE • REPEAT</p>
       </div>
     </section>
 
   </main>
 
-  <!-- Scroll Height Track (800vh) -->
+  <!-- Virtual Scroll Height Track for Native Scroll & Smooth Scroller Interpolation -->
   <div class="scroll-container" aria-hidden="true"></div>
 
   <!-- Interactive Full Resume Modal (Quick View & Direct Download) -->
@@ -697,15 +799,15 @@
           <span class="resume-modal-meta">OFFICIAL DOCUMENT</span>
         </div>
         <div class="resume-modal-controls">
-          <a href="/Aryan_Fargose_Resume.pdf" download="Aryan_Fargose_Resume.pdf" class="btn-resume-download" title="Download Official Resume PDF">
-            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+          <a href="https://portfolio-nu-ten-b8bg7s8ws7.vercel.app/Aryan_Fargose_Resume.pdf" download="Aryan_Fargose_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-resume-download" title="Download Official Resume PDF">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
             <span>DOWNLOAD PDF</span>
           </a>
-          <a href="/Aryan_Fargose_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-resume-tab" title="Open PDF in new tab">
+          <a href="https://portfolio-nu-ten-b8bg7s8ws7.vercel.app/Aryan_Fargose_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-resume-tab" title="Open PDF in new tab">
             <span>NEW TAB ↗</span>
           </a>
-          <button class="btn-resume-close" id="btn-close-resume-modal" aria-label="Close Resume Modal">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"></path></svg>
+          <button class="btn-resume-close" id="btn-close-resume-modal" aria-label="Close Resume Modal" type="button">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
           </button>
         </div>
       </div>
@@ -797,7 +899,7 @@
               <div><strong>Languages:</strong> Java (Intermediate), Python (Intermediate), C (Beginner), JavaScript (ES6+), TypeScript</div>
               <div><strong>DSA:</strong> Arrays, Strings, Recursion, Sorting Algorithms</div>
               <div><strong>Competitive Programming:</strong> CodeChef — Beginner Division</div>
-              <div><strong>Tools & Platforms:</strong> Git, GitHub, VS Code, MS Excel</div>
+              <div><strong>Tools &amp; Platforms:</strong> Git, GitHub, VS Code, MS Excel</div>
             </div>
           </div>
 
@@ -814,12 +916,12 @@
 
           <!-- Section: Areas of Interest & Soft Skills -->
           <div class="resume-sec">
-            <div class="resume-sec-title">AREAS OF INTEREST & ATHLETICS</div>
+            <div class="resume-sec-title">AREAS OF INTEREST &amp; ATHLETICS</div>
             <div style="display: flex; flex-direction: column; gap: 6px; font-size: 0.84rem; color: var(--text-secondary);">
               <div>• <strong>Software Development:</strong> Building performant web and desktop applications.</div>
-              <div>• <strong>Data Structures & Algorithms:</strong> Strengthening problem-solving fundamentals through CodeChef practice.</div>
+              <div>• <strong>Data Structures &amp; Algorithms:</strong> Strengthening problem-solving fundamentals through CodeChef practice.</div>
               <div>• <strong>Open Source:</strong> Preparing to make active contributions as core systems mature.</div>
-              <div>• <strong>Interests & Hobbies:</strong> Music (creative focus), Cinema (visual storytelling), Sports (Cricket, Football, Badminton, Swimming, Running).</div>
+              <div>• <strong>Interests &amp; Hobbies:</strong> Music (creative focus), Cinema (visual storytelling), Sports (Cricket, Football, Badminton, Swimming, Running).</div>
               <div>• <strong>Soft Skills:</strong> Communication, Time Management, Active Listening, Teamwork, Adaptability, Fast Learner.</div>
             </div>
           </div>
@@ -828,7 +930,6 @@
     </div>
   </div>
 
-  <!-- Main JavaScript Entrypoint -->
-  <script type="module" src="/src/main.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
